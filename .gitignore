@@ -1,0 +1,62 @@
+# WordPress Core
+/wp-admin/
+/wp-includes/
+/wp-content/index.php
+/wp-content/languages/
+/index.php
+/license.txt
+/readme.html
+/wp-*.php
+/xmlrpc.php
+
+# WordPress Content
+/wp-content/uploads/
+/wp-content/upgrade/
+/wp-content/backup-db/
+/wp-content/backups/
+/wp-content/cache/
+/wp-content/w3tc-config/
+/wp-content/advanced-cache.php
+/wp-content/wp-cache-config.php
+
+# Vendor Plugins (add specific plugins you DON'T want to track)
+/wp-content/plugins/akismet/
+/wp-content/plugins/hello.php
+/wp-content/plugins/wordpress-seo/
+/wp-content/plugins/woocommerce/
+# Add more vendor plugins as needed
+
+# Vendor Themes (add themes you DON'T want to track)
+/wp-content/themes/twenty*/
+
+# Configuration
+wp-config.php
+wp-config-local.php
+.htaccess
+
+# Environment variables
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+/wp-content/debug.log
+
+# Build artifacts
+node_modules/
+vendor/
+dist/
+build/
+*.zip
+*.tar.gz
