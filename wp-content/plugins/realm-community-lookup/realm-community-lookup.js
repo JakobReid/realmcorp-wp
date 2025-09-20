@@ -7,6 +7,18 @@ jQuery(document).ready(function($) {
             return;
         }
 
+        // Show loading state
+        let loadingContainer = $('#realm_cl_loading');
+        let searchButton = $('#realm_cl_search_btn');
+        let selectContainer = $('#realm_cl_select_container');
+        let pricingDetails = $('#realm_cl_pricing_details');
+
+        // Clear previous results and show loading
+        selectContainer.hide();
+        pricingDetails.empty();
+        loadingContainer.show();
+        searchButton.addClass('loading');
+
         $.ajax({
             url: realmClAjax.ajax_url,
             type: 'POST',
@@ -15,14 +27,14 @@ jQuery(document).ready(function($) {
                 query: query
             },
             success: function(response) {
-                let selectContainer = $('#realm_cl_select_container');
-                let pricingDetails = $('#realm_cl_pricing_details');
                 let selectElement = $('#realm_cl_site_select');
 
+                // Hide loading and remove button loading state
+                loadingContainer.hide();
+                searchButton.removeClass('loading');
+
                 // Clear out old data
-                selectContainer.hide();
                 selectElement.empty().append('<option value="">-- Select Building --</option>');
-                pricingDetails.empty();
 
                 // If no matches
                 if (!response || response.length === 0) {
@@ -55,6 +67,9 @@ jQuery(document).ready(function($) {
                 }
             },
             error: function() {
+                // Hide loading and remove button loading state
+                loadingContainer.hide();
+                searchButton.removeClass('loading');
                 alert('An error occurred while searching.');
             }
         });

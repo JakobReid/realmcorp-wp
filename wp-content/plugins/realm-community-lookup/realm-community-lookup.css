@@ -180,6 +180,54 @@
     font-size: 1.5rem;
 }
 
+/* Loading Spinner */
+.realm-loading {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+}
+
+.realm-spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 3px solid #e2e8f0;
+    border-radius: 50%;
+    border-top-color: #015691;
+    animation: realm-spin 1s ease-in-out infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes realm-spin {
+    to { transform: rotate(360deg); }
+}
+
+.realm-loading-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #5f6368;
+    font-weight: 500;
+}
+
+/* Button loading state */
+.realm-search-button.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.realm-search-button.loading::after {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: realm-spin 1s ease-in-out infinite;
+    margin-left: 0.5rem;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
     /* Fix WordPress block padding overrides */

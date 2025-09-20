@@ -39,6 +39,12 @@ if ( ! defined( 'ABSPATH' ) ) {
     </select>
 </div>
 
+<!-- Loading Container -->
+<div id="realm_cl_loading" class="realm-loading">
+    <div class="realm-spinner"></div>
+    <div class="realm-loading-text">Searching buildings...</div>
+</div>
+
 <!-- Results Container -->
 <div id="realm_cl_pricing_details"></div>
 
