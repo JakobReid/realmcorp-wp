@@ -56,6 +56,8 @@
     overflow: hidden;
     text-decoration: none !important;
     color: inherit !important;
+    cursor: pointer;
+    display: block;
 }
 
 .service-card::before {
@@ -106,6 +108,28 @@
     transition: all 0.3s;
     background-color: #015691 !important;
     padding: 0.75rem 2rem !important;
+}
+
+/* Service card button overrides */
+.service-card-button .wp-block-button__link {
+    background: white !important;
+    color: inherit !important;
+    padding: 2rem !important;
+    text-align: left !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+    border: 1px solid #e8eaed !important;
+    display: block !important;
+    width: 100% !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.service-card-button .wp-block-button__link:hover {
+    background: white !important;
+    color: inherit !important;
+    transform: translateY(-4px) !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12) !important;
 }
 
 .wp-block-button__link:hover {

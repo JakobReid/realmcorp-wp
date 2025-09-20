@@ -12,101 +12,77 @@
 
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"className":"service-card","layout":{"type":"constrained"}} -->
-<div class="wp-block-group service-card"><!-- wp:paragraph {"className":"service-icon"} -->
-<p class="service-icon">🏠</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Move In</h3>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
+<div class="wp-block-column"><!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"service-card-button"} -->
+<div class="wp-block-button service-card-button"><a class="wp-block-button__link service-card wp-element-button" href="#move-in">
+<div class="service-icon">🏠</div>
+<h3>Move In</h3>
 <p>Start your water service and set up your account for your new home</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
+</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"className":"service-card","layout":{"type":"constrained"}} -->
-<div class="wp-block-group service-card"><!-- wp:paragraph {"className":"service-icon"} -->
-<p class="service-icon">💳</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Pay a Bill</h3>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
+<div class="wp-block-column"><!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"service-card-button"} -->
+<div class="wp-block-button service-card-button"><a class="wp-block-button__link service-card wp-element-button" href="#pay-bill">
+<div class="service-icon">💳</div>
+<h3>Pay a Bill</h3>
 <p>Make a payment through StrataPay secure payment system</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
+</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"className":"service-card","layout":{"type":"constrained"}} -->
-<div class="wp-block-group service-card"><!-- wp:paragraph {"className":"service-icon"} -->
-<p class="service-icon">📦</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Move Out</h3>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
+<div class="wp-block-column"><!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"service-card-button"} -->
+<div class="wp-block-button service-card-button"><a class="wp-block-button__link service-card wp-element-button" href="#move-out">
+<div class="service-icon">📦</div>
+<h3>Move Out</h3>
 <p>Close your account and finalize your water service</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
+</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"className":"service-card","layout":{"type":"constrained"}} -->
-<div class="wp-block-group service-card"><!-- wp:paragraph {"className":"service-icon"} -->
-<p class="service-icon">🔄</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Direct Debit</h3>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
+<div class="wp-block-column"><!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"service-card-button"} -->
+<div class="wp-block-button service-card-button"><a class="wp-block-button__link service-card wp-element-button" href="#direct-debit">
+<div class="service-icon">🔄</div>
+<h3>Direct Debit</h3>
 <p>Set up automatic payments for hassle-free bill management</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
+</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"className":"service-card","layout":{"type":"constrained"}} -->
-<div class="wp-block-group service-card"><!-- wp:paragraph {"className":"service-icon"} -->
-<p class="service-icon">📊</p>
-<!-- /wp:parameter -->
-
-<!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">View Rates</h3>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
+<div class="wp-block-column"><!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"service-card-button"} -->
+<div class="wp-block-button service-card-button"><a class="wp-block-button__link service-card wp-element-button" href="#view-rates">
+<div class="service-icon">📊</div>
+<h3>View Rates</h3>
 <p>Check current water rates and charges for your building</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
+</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:group {"className":"service-card","layout":{"type":"constrained"}} -->
-<div class="wp-block-group service-card"><!-- wp:paragraph {"className":"service-icon"} -->
-<p class="service-icon">📞</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Contact Support</h3>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
+<div class="wp-block-column"><!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"service-card-button"} -->
+<div class="wp-block-button service-card-button"><a class="wp-block-button__link service-card wp-element-button" href="#contact">
+<div class="service-icon">📞</div>
+<h3>Contact Support</h3>
 <p>Get help with your account or report an issue</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
+</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
