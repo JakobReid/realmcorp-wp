@@ -156,3 +156,82 @@ function realm_cl_handle_search() {
 // 4. Register the AJAX hooks
 add_action('wp_ajax_realm_cl_handle_search', 'realm_cl_handle_search');
 add_action('wp_ajax_nopriv_realm_cl_handle_search', 'realm_cl_handle_search');
+
+// 5. Building Hub Shortcode: [building_hub] - Hidden functionality for backend routing
+function realm_building_hub_display() {
+    // This shortcode now just handles backend logic without displaying anything
+    // The billing system routing happens here but customers don't see it
+    $billing_system = isset($_GET['system']) ? sanitize_text_field($_GET['system']) : '';
+
+    // You can add any backend logic here for different billing systems
+    // but return empty string so nothing displays to customer
+
+    return '';
+}
+add_shortcode('building_hub', 'realm_building_hub_display');
+
+// 6. Building Hub Hero Shortcode: [building_hub_hero]
+function realm_building_hub_hero_display() {
+    // Get URL parameters
+    $building_code = isset($_GET['building']) ? sanitize_text_field($_GET['building']) : '';
+
+    // Try to get building name from CSV if we have building code
+    $building_name = 'Building Hub';
+    $postcode = '';
+    $billing_system = '';
+    $classification = '';
+
+    if ($building_code) {
+        $communities_csv = plugin_dir_path(__FILE__) . 'communities.csv';
+        if (file_exists($communities_csv) && ($handle = fopen($communities_csv, 'r')) !== false) {
+            fgetcsv($handle); // Skip header
+            while (($row = fgetcsv($handle)) !== false) {
+                if ($row[2] === $building_code) { // building_code is column 2
+                    $building_name = $row[0] . ' Hub'; // building_name is column 0
+                    $billing_system = $row[1]; // billing_system is column 1
+                    $postcode = $row[3]; // postcode is column 3
+                    $classification = $row[5]; // classification is column 5
+                    break;
+                }
+            }
+            fclose($handle);
+        }
+    }
+
+    ob_start();
+    ?>
+    <div class="building-hub-hero">
+        <h1><?php echo esc_html($building_name); ?></h1>
+        <div class="building-details">
+            <?php if ($postcode): ?>
+            <div class="detail-item">
+                <span>📍 Postcode: <?php echo esc_html($postcode); ?></span>
+            </div>
+            <?php endif; ?>
+            <?php if ($classification): ?>
+            <div class="detail-item">
+                <span>🏢 Type: <?php echo esc_html($classification); ?></span>
+            </div>
+            <?php endif; ?>
+        </div>
+        <?php if ($billing_system === 'BlueBilling'): ?>
+        <div style="margin-top: 2rem;">
+            <a href="#portal" class="wp-block-button__link" style="
+                background-color: #015691 !important;
+                color: white !important;
+                padding: 0.75rem 2rem !important;
+                border-radius: 4px;
+                text-decoration: none;
+                display: inline-block;
+                font-weight: bold;
+                transition: all 0.3s;
+            ">
+                🔐 Access Customer Portal
+            </a>
+        </div>
+        <?php endif; ?>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('building_hub_hero', 'realm_building_hub_hero_display');

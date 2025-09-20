@@ -135,6 +135,33 @@ jQuery(document).ready(function($) {
                 </tbody>
             </table>
         `;
-        pricingDetails.html(tableHtml);
+
+        // Add Building Hub button
+        let hubButton = `
+            <div style="margin-top: 20px;">
+                <button id="realm_cl_hub_btn" data-building-code="${item.building_code}" data-billing-system="${item.billing_system}" style="
+                    padding: 0.75rem 1.5rem;
+                    font-size: 1.25rem;
+                    background-color: #28a745;
+                    color: #fff;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    font-weight: bold;
+                ">
+                    Go to ${buildingName} Building Hub →
+                </button>
+            </div>
+        `;
+
+        pricingDetails.html(tableHtml + hubButton);
+
+        // Handle hub button click
+        $('#realm_cl_hub_btn').on('click', function() {
+            let buildingCode = $(this).data('building-code');
+            let billingSystem = $(this).data('billing-system');
+            // For now, just placeholder - will be replaced with actual hub page
+            window.location.href = '/staging/5684/building-hub/?building=' + encodeURIComponent(buildingCode) + '&system=' + encodeURIComponent(billingSystem);
+        });
     }
 });

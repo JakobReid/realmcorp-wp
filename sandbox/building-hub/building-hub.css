@@ -1,0 +1,142 @@
+/* === Building Hub Styles === */
+.building-hub-hero {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%) !important;
+    color: white !important;
+    padding: 3rem 2rem !important;
+    margin: 0 0 2rem 0 !important;
+    /* Reset any inherited spacing */
+    margin-block-start: 0 !important;
+    margin-block-end: 2rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    /* Container constraints */
+    max-width: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.building-hub-hero h1 {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white !important;
+}
+
+.building-details {
+    display: flex !important;
+    gap: 2rem !important;
+    font-size: 1.1rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-block-start: 0 !important;
+    margin-block-end: 0 !important;
+}
+
+.building-details .detail-item {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.building-details span {
+    color: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+.service-card {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #e8eaed;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #015691;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.service-card:hover::before {
+    transform: translateX(0);
+}
+
+.service-card h3 {
+    color: #121217;
+    font-family: 'Poppins', sans-serif !important;
+    margin-top: 1rem;
+}
+
+.service-card p {
+    color: #5f6368;
+    line-height: 1.6;
+}
+
+.service-icon {
+    width: 50px;
+    height: 50px;
+    background: #f0f7ff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+/* Button overrides for RealmCorp style */
+.wp-block-button__link {
+    transition: all 0.3s;
+    background-color: #015691 !important;
+    padding: 0.75rem 2rem !important;
+}
+
+.wp-block-button__link:hover {
+    background-color: #013d5f !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(1, 86, 145, 0.3);
+}
+
+.is-style-outline .wp-block-button__link {
+    background: transparent !important;
+    color: #015691 !important;
+    border: 2px solid #015691 !important;
+}
+
+.is-style-outline .wp-block-button__link:hover {
+    background: #015691 !important;
+    color: white !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .building-details {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .building-hub-hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .service-card {
+        margin-bottom: 1rem;
+    }
+}

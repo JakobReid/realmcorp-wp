@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Hub - RealmCorp</title>
+    <link rel="stylesheet" href="building-hub.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="https://realmcorp.com.au" class="logo">REALM</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="https://realmcorp.com.au">Home</a></li>
+                    <li><a href="https://realmcorp.com.au/about">About</a></li>
+                    <li><a href="https://realmcorp.com.au/services">Services</a></li>
+                    <li><a href="https://realmcorp.com.au/contact">Contact</a></li>
+                    <li><a href="#portal" class="btn-primary">Portal Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Building Info Bar -->
+    <section class="building-info">
+        <div class="building-info-container">
+            <h1 class="building-name">Halcyon Greens</h1>
+            <div class="building-details">
+                <div class="detail-item">
+                    📍 <span>Postcode: 4209</span>
+                </div>
+                <div class="detail-item">
+                    💳 <span>Billing: StrataMax</span>
+                </div>
+                <div class="detail-item">
+                    🏢 <span>Type: Residential</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <main class="main-container">
+
+        <!-- Services Section -->
+        <section>
+            <h2 class="section-title">Building Services</h2>
+            <p class="section-subtitle">Select a service to manage your water account</p>
+
+            <!-- Services Grid -->
+            <div class="services-grid">
+            <a href="#move-in" class="service-card">
+                <div class="service-icon">🏠</div>
+                <h3 class="service-title">Move In</h3>
+                <p class="service-description">Start your water service and set up your account for your new home</p>
+            </a>
+
+            <a href="#pay-bill" class="service-card">
+                <div class="service-icon">💳</div>
+                <h3 class="service-title">Pay a Bill</h3>
+                <p class="service-description">Make a payment through StrataPay secure payment system</p>
+            </a>
+
+            <a href="#move-out" class="service-card">
+                <div class="service-icon">📦</div>
+                <h3 class="service-title">Move Out</h3>
+                <p class="service-description">Close your account and finalize your water service</p>
+            </a>
+
+            <a href="#direct-debit" class="service-card">
+                <div class="service-icon">🔄</div>
+                <h3 class="service-title">Direct Debit</h3>
+                <p class="service-description">Set up automatic payments for hassle-free bill management</p>
+            </a>
+
+            <a href="#view-rates" class="service-card">
+                <div class="service-icon">📊</div>
+                <h3 class="service-title">View Rates</h3>
+                <p class="service-description">Check current water rates and charges for your building</p>
+            </a>
+
+            <a href="#contact" class="service-card">
+                <div class="service-icon">📞</div>
+                <h3 class="service-title">Contact Support</h3>
+                <p class="service-description">Get help with your account or report an issue</p>
+            </a>
+        </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>REALM</h3>
+                    <p>Your trusted water management partner. Providing innovative solutions for residential and commercial properties across Australia.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="https://realmcorp.com.au">Home</a></li>
+                        <li><a href="https://realmcorp.com.au/about">About Us</a></li>
+                        <li><a href="https://realmcorp.com.au/services">Services</a></li>
+                        <li><a href="https://realmcorp.com.au/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#move-in">Move In</a></li>
+                        <li><a href="#pay-bill">Pay Bill</a></li>
+                        <li><a href="#move-out">Move Out</a></li>
+                        <li><a href="#rates">View Rates</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="https://realmcorp.com.au/faq">FAQs</a></li>
+                        <li><a href="https://realmcorp.com.au/contact">Contact Support</a></li>
+                        <li><a href="https://realmcorp.com.au/privacy">Privacy Policy</a></li>
+                        <li><a href="https://realmcorp.com.au/terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RealmCorp. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const building = urlParams.get('building');
+        const system = urlParams.get('system');
+
+        // If we have building data from URL, update the display
+        if (building && system) {
+            // This would normally fetch building details from an API
+            console.log('Building Code:', building);
+            console.log('Billing System:', system);
+
+            // Update billing system in the UI
+            if (system === 'BlueBilling') {
+                document.querySelector('.building-details').innerHTML = `
+                    <div class="detail-item">
+                        📍 <span>Building Code: ${building}</span>
+                    </div>
+                    <div class="detail-item">
+                        💳 <span>Billing: BlueBilling</span>
+                    </div>
+                    <div class="detail-item">
+                        🏢 <span>Type: Residential</span>
+                    </div>
+                `;
+
+                // Add portal access for BlueBilling
+                const grid = document.querySelector('.services-grid');
+                const portalCard = `
+                    <a href="#portal" class="service-card">
+                        <div class="service-icon">🔐</div>
+                        <h3 class="service-title">Customer Portal</h3>
+                        <p class="service-description">Access your BlueBilling account and manage services online</p>
+                    </a>
+                `;
+                grid.insertAdjacentHTML('afterbegin', portalCard);
+            }
+        }
+    </script>
+</body>
+</html>
