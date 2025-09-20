@@ -1,3 +1,9 @@
+/* === Google Fonts === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+
+
 /* === Sticky Header: Keep exact layout === */
 :where(.wp-site-blocks) > * {
   margin: 0;
@@ -11,10 +17,48 @@
 }
 
 /* === Building Hub Styles === */
+/* Global Poppins override for building hub */
+.building-hub-hero,
+.building-hub-hero *,
+.building-services-section,
+.building-services-section *,
+.building-rates-section,
+.building-rates-section *,
+.service-card,
+.service-card * {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.building-services-title {
+    color: #015691 !important;
+    font-family: 'Poppins', sans-serif !important;
+    text-align: center !important;
+    font-size: 2rem !important;
+    font-weight: 600 !important;
+}
+
+.building-services-subtitle {
+    color: #5f6368 !important;
+    text-align: center !important;
+}
+
+
+/* Column layout for service cards */
+.building-services-section .wp-block-columns {
+    display: flex !important;
+    gap: 2rem !important;
+    margin-bottom: 2rem !important;
+}
+
+.building-services-section .wp-block-column {
+    flex: 1 !important;
+    min-width: 0 !important;
+}
+
 .building-hub-hero {
     background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%) !important;
     color: white !important;
-    padding: 3rem 2rem !important;
+    padding: 3rem !important;
     margin: 0 0 2rem 0 !important;
     /* Reset any inherited spacing */
     margin-block-start: 0 !important;
@@ -27,10 +71,17 @@
     box-sizing: border-box !important;
 }
 
+/* Inner content container */
+.building-hub-hero-inner {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 2rem !important;
+}
+
 .building-hub-hero h1 {
     font-family: 'Poppins', sans-serif !important;
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
     margin-bottom: 1rem;
     color: white !important;
 }
@@ -83,6 +134,14 @@
     color: inherit !important;
     cursor: pointer;
     display: block;
+    height: 100%;
+}
+
+.service-card > a,
+.service-card > div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .service-card::before {
@@ -109,6 +168,7 @@
 .service-card h3 {
     color: #121217;
     font-family: 'Poppins', sans-serif !important;
+    font-weight: 600 !important;
     margin-top: 1rem;
 }
 
@@ -127,6 +187,20 @@
     justify-content: center;
     font-size: 1.5rem;
 }
+
+.service-icon i {
+    color: #015691;
+    font-size: 1.5rem;
+}
+
+/* FontAwesome icons in building details */
+.building-details i {
+    color: white;
+    margin-right: 0.5rem;
+    width: 1em;
+}
+
+
 
 /* Button overrides for RealmCorp style */
 .wp-block-button__link {
@@ -190,6 +264,85 @@
     color: white !important;
 }
 
+/* Building Rates Section */
+.building-rates-section {
+    /* Match services section width */
+    padding: 2rem !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid #e8eaed;
+}
+
+.building-rates-section h2 {
+    color: #015691 !important;
+    text-align: center !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 2rem !important;
+}
+
+.utility-rates-group {
+    margin-bottom: 3rem;
+}
+
+.utility-rates-group:last-child {
+    margin-bottom: 0;
+}
+
+.utility-rates-group h3 {
+    color: #015691 !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 1.5rem !important;
+    margin: 2rem 0 1rem 0 !important;
+}
+
+.rates-table-container {
+    overflow-x: auto;
+}
+
+.rates-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    table-layout: fixed;
+}
+
+.rates-table th,
+.rates-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e8eaed;
+}
+
+.rates-table th:first-child,
+.rates-table td:first-child {
+    width: 60%;
+}
+
+.rates-table th:last-child,
+.rates-table td:last-child {
+    width: 40%;
+}
+
+.rates-table th {
+    background: #f8f9fa;
+    color: #015691;
+    font-weight: 600 !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.rates-table td {
+    color: #5f6368;
+}
+
+.rates-table tr:hover {
+    background: #f8f9fa;
+}
+
 /* Mobile responsive */
 @media (max-width: 768px) {
     .building-details {
@@ -203,5 +356,16 @@
 
     .service-card {
         margin-bottom: 1rem;
+    }
+
+    .building-rates-section {
+        margin: 2rem 0;
+        padding: 1rem;
+    }
+
+    .rates-table th,
+    .rates-table td {
+        padding: 0.75rem;
+        font-size: 0.9rem;
     }
 }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Building Hub - RealmCorp</title>
     <link rel="stylesheet" href="building-hub.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
@@ -23,19 +24,19 @@
         </div>
     </header>
 
-    <!-- Building Info Bar -->
-    <section class="building-info">
-        <div class="building-info-container">
-            <h1 class="building-name">Halcyon Greens</h1>
+    <!-- Building Hero Section -->
+    <section class="building-hub-hero">
+        <div class="building-hub-hero-inner">
+            <h1>Halcyon Greens</h1>
             <div class="building-details">
                 <div class="detail-item">
-                    📍 <span>Postcode: 4209</span>
+                    <span>📍 Postcode: 4209</span>
                 </div>
                 <div class="detail-item">
-                    💳 <span>Billing: StrataMax</span>
+                    <span>💳 Billing: StrataMax</span>
                 </div>
                 <div class="detail-item">
-                    🏢 <span>Type: Residential</span>
+                    <span>🏢 Type: Residential</span>
                 </div>
             </div>
         </div>
@@ -43,50 +44,78 @@
 
     <!-- Main Container -->
     <main class="main-container">
-
         <!-- Services Section -->
-        <section>
-            <h2 class="section-title">Building Services</h2>
-            <p class="section-subtitle">Select a service to manage your water account</p>
+        <section class="building-services-section">
+            <h2 class="building-services-title">Building Services</h2>
+            <p class="building-services-subtitle">Select a service to manage your water account</p>
 
             <!-- Services Grid -->
             <div class="services-grid">
-            <a href="#move-in" class="service-card">
-                <div class="service-icon">🏠</div>
-                <h3 class="service-title">Move In</h3>
-                <p class="service-description">Start your water service and set up your account for your new home</p>
-            </a>
+                <a href="#move-in" class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Move In</h3>
+                    <p>Start your water service and set up your account for your new home</p>
+                </a>
 
-            <a href="#pay-bill" class="service-card">
-                <div class="service-icon">💳</div>
-                <h3 class="service-title">Pay a Bill</h3>
-                <p class="service-description">Make a payment through StrataPay secure payment system</p>
-            </a>
+                <a href="#pay-bill" class="service-card">
+                    <div class="service-icon">💳</div>
+                    <h3>Pay a Bill</h3>
+                    <p>Make a payment through StrataPay secure payment system</p>
+                </a>
 
-            <a href="#move-out" class="service-card">
-                <div class="service-icon">📦</div>
-                <h3 class="service-title">Move Out</h3>
-                <p class="service-description">Close your account and finalize your water service</p>
-            </a>
+                <a href="#move-out" class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h3>Move Out</h3>
+                    <p>Close your account and finalize your water service</p>
+                </a>
 
-            <a href="#direct-debit" class="service-card">
-                <div class="service-icon">🔄</div>
-                <h3 class="service-title">Direct Debit</h3>
-                <p class="service-description">Set up automatic payments for hassle-free bill management</p>
-            </a>
+                <a href="#direct-debit" class="service-card">
+                    <div class="service-icon">🔄</div>
+                    <h3>Direct Debit</h3>
+                    <p>Set up automatic payments for hassle-free bill management</p>
+                </a>
 
-            <a href="#view-rates" class="service-card">
-                <div class="service-icon">📊</div>
-                <h3 class="service-title">View Rates</h3>
-                <p class="service-description">Check current water rates and charges for your building</p>
-            </a>
+                <a href="#view-rates" class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>View Rates</h3>
+                    <p>Check current water rates and charges for your building</p>
+                </a>
 
-            <a href="#contact" class="service-card">
-                <div class="service-icon">📞</div>
-                <h3 class="service-title">Contact Support</h3>
-                <p class="service-description">Get help with your account or report an issue</p>
-            </a>
-        </div>
+                <a href="#contact" class="service-card">
+                    <div class="service-icon">📞</div>
+                    <h3>Contact Support</h3>
+                    <p>Get help with your account or report an issue</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Building Rates Section -->
+        <section class="building-rates-section">
+            <h2>Water Rates for Halcyon Greens</h2>
+            <div class="rates-table-container">
+                <table class="rates-table">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Water Supply</td>
+                            <td>$2.50 per day</td>
+                        </tr>
+                        <tr>
+                            <td>Water Usage</td>
+                            <td>$3.20 per kL</td>
+                        </tr>
+                        <tr>
+                            <td>Sewerage</td>
+                            <td>$1.80 per day</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
 
@@ -148,13 +177,13 @@
             if (system === 'BlueBilling') {
                 document.querySelector('.building-details').innerHTML = `
                     <div class="detail-item">
-                        📍 <span>Building Code: ${building}</span>
+                        <span>📍 Building Code: ${building}</span>
                     </div>
                     <div class="detail-item">
-                        💳 <span>Billing: BlueBilling</span>
+                        <span>💳 Billing: BlueBilling</span>
                     </div>
                     <div class="detail-item">
-                        🏢 <span>Type: Residential</span>
+                        <span>🏢 Type: Residential</span>
                     </div>
                 `;
 
@@ -163,8 +192,8 @@
                 const portalCard = `
                     <a href="#portal" class="service-card">
                         <div class="service-icon">🔐</div>
-                        <h3 class="service-title">Customer Portal</h3>
-                        <p class="service-description">Access your BlueBilling account and manage services online</p>
+                        <h3>Customer Portal</h3>
+                        <p>Access your BlueBilling account and manage services online</p>
                     </a>
                 `;
                 grid.insertAdjacentHTML('afterbegin', portalCard);

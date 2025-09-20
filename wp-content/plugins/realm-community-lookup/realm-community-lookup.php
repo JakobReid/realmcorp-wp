@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: Realm Community Lookup
-Description: Search community data by postcode, display building rates and community information with multi-site dropdown.
-Version: 3.1
+Description: Community search and building hub functionality with multi-utility rate management, service cards, and billing system integration.
+Version: 4.0
 Author: Ryan Reid / Jakob Reid
 License: GPL2
 */
@@ -23,12 +23,14 @@ function realm_cl_enqueue_scripts() {
         true
     );
 
+
     // Make the admin-ajax URL available to JS
     wp_localize_script('realm-community-lookup-script', 'realmClAjax', [
         'ajax_url' => admin_url('admin-ajax.php'),
     ]);
 }
-add_action('wp_enqueue_scripts', 'realm_cl_enqueue_scripts');
+add_action('wp_enqueue_scripts', 'realm_cl_enqueue_scripts', 5);
+
 
 // 2. Shortcode: [realm_community_lookup]
 function realm_cl_display_search_form() {
@@ -103,19 +105,21 @@ function realm_cl_handle_search() {
     // First, read all charges data into memory for quick lookup
     $charges_by_building = array();
     if ( file_exists($charges_csv) && ($charges_handle = fopen($charges_csv, 'r')) !== false ) {
-        // Skip header row
+        // Read header row and create mapping
         $charges_header = fgetcsv($charges_handle);
+        $header_map = array_flip($charges_header);
 
-        // Read all charges data
+        // Read all charges data using column names
         while (($charge_row = fgetcsv($charges_handle)) !== false) {
-            $building_name = $charge_row[0];
+            $building_name = $charge_row[$header_map['building_name']];
             if (!isset($charges_by_building[$building_name])) {
                 $charges_by_building[$building_name] = array();
             }
             $charges_by_building[$building_name][] = array(
-                'utility' => $charge_row[1],
-                'charge_name' => $charge_row[2],
-                'charge_rate' => $charge_row[3]
+                'utility' => isset($header_map['utility']) ? $charge_row[$header_map['utility']] : '',
+                'charge_name' => isset($header_map['charge_name']) ? $charge_row[$header_map['charge_name']] : '',
+                'charge_rate' => isset($header_map['charge_rate']) ? $charge_row[$header_map['charge_rate']] : '',
+                'charge_rate_unit' => isset($header_map['charge_rate_unit']) ? $charge_row[$header_map['charge_rate_unit']] : ''
             );
         }
         fclose($charges_handle);
@@ -198,40 +202,158 @@ function realm_building_hub_hero_display() {
         }
     }
 
+    // Set URLs based on billing system
+    $base_url = '/staging/5684';
+    $urls = array();
+
+    if ($billing_system === 'StrataMax') {
+        $urls = array(
+            'move_in' => '', // Custom form needed
+            'pay_bill' => $base_url . '/making-a-payment',
+            'move_out' => '', // Custom form needed
+            'direct_debit' => 'https://www.stratapay.com.au/directdebit/',
+            'contact' => $base_url . '/contact'
+        );
+    } elseif ($billing_system === 'BlueBilling') {
+        $urls = array(
+            'move_in' => $base_url . '/move-in',
+            'pay_bill' => $base_url . '/customer-portal',
+            'move_out' => $base_url . '/move-out',
+            'direct_debit' => $base_url . '/customer-portal',
+            'contact' => $base_url . '/contact',
+            'portal' => $base_url . '/customer-portal'
+        );
+    } else {
+        // Default fallback
+        $urls = array(
+            'move_in' => '',
+            'pay_bill' => '',
+            'move_out' => '',
+            'direct_debit' => '',
+            'contact' => $base_url . '/contact'
+        );
+    }
+
     ob_start();
-    ?>
-    <div class="building-hub-hero">
-        <h1><?php echo esc_html($building_name); ?></h1>
-        <div class="building-details">
-            <?php if ($postcode): ?>
-            <div class="detail-item">
-                <span>📍 Postcode: <?php echo esc_html($postcode); ?></span>
-            </div>
-            <?php endif; ?>
-            <?php if ($classification): ?>
-            <div class="detail-item">
-                <span>🏢 Type: <?php echo esc_html($classification); ?></span>
-            </div>
-            <?php endif; ?>
-        </div>
-        <?php if ($billing_system === 'BlueBilling'): ?>
-        <div style="margin-top: 2rem;">
-            <a href="#portal" class="wp-block-button__link" style="
-                background-color: #015691 !important;
-                color: white !important;
-                padding: 0.75rem 2rem !important;
-                border-radius: 4px;
-                text-decoration: none;
-                display: inline-block;
-                font-weight: bold;
-                transition: all 0.3s;
-            ">
-                🔐 Access Customer Portal
-            </a>
-        </div>
-        <?php endif; ?>
-    </div>
-    <?php
+    include plugin_dir_path(__FILE__) . 'templates/building-hub-hero.php';
     return ob_get_clean();
 }
 add_shortcode('building_hub_hero', 'realm_building_hub_hero_display');
+
+// 7. Building Hub Services Shortcode: [building_hub_services]
+function realm_building_hub_services_display() {
+    // Get URL parameters
+    $building_code = isset($_GET['building']) ? sanitize_text_field($_GET['building']) : '';
+
+    if (!$building_code) {
+        return '<p>No building selected.</p>';
+    }
+
+    // Get billing system from CSV
+    $billing_system = '';
+    $communities_csv = plugin_dir_path(__FILE__) . 'communities.csv';
+
+    if (file_exists($communities_csv) && ($handle = fopen($communities_csv, 'r')) !== false) {
+        fgetcsv($handle); // Skip header
+        while (($row = fgetcsv($handle)) !== false) {
+            if ($row[2] === $building_code) { // building_code is column 2
+                $billing_system = $row[1]; // billing_system is column 1
+                break;
+            }
+        }
+        fclose($handle);
+    }
+
+    // Set URLs based on billing system
+    $base_url = '/staging/5684';
+    $urls = array();
+
+    if ($billing_system === 'StrataMax') {
+        $urls = array(
+            'move_in' => '', // Custom form needed
+            'pay_bill' => $base_url . '/making-a-payment',
+            'move_out' => '', // Custom form needed
+            'direct_debit' => 'https://www.stratapay.com.au/directdebit/',
+            'contact' => $base_url . '/contact'
+        );
+    } elseif ($billing_system === 'BlueBilling') {
+        $urls = array(
+            'move_in' => $base_url . '/move-in',
+            'pay_bill' => $base_url . '/customer-portal',
+            'move_out' => $base_url . '/move-out',
+            'direct_debit' => $base_url . '/customer-portal',
+            'contact' => $base_url . '/contact',
+            'portal' => $base_url . '/customer-portal'
+        );
+    } else {
+        // Default fallback
+        $urls = array(
+            'move_in' => '',
+            'pay_bill' => '',
+            'move_out' => '',
+            'direct_debit' => '',
+            'contact' => $base_url . '/contact'
+        );
+    }
+
+    ob_start();
+    include plugin_dir_path(__FILE__) . 'templates/building-hub-services.php';
+    return ob_get_clean();
+}
+add_shortcode('building_hub_services', 'realm_building_hub_services_display');
+
+// 7. Building Hub Rates Shortcode: [building_hub_rates]
+function realm_building_hub_rates_display() {
+    // Get URL parameters
+    $building_code = isset($_GET['building']) ? sanitize_text_field($_GET['building']) : '';
+
+    if (!$building_code) {
+        return '<p>No building selected.</p>';
+    }
+
+    // Get building data from CSV
+    $building_name = '';
+    $charges = array();
+
+    $communities_csv = plugin_dir_path(__FILE__) . 'communities.csv';
+    $charges_csv = plugin_dir_path(__FILE__) . 'community_charges.csv';
+
+    // Get building name from communities CSV
+    if (file_exists($communities_csv) && ($handle = fopen($communities_csv, 'r')) !== false) {
+        fgetcsv($handle); // Skip header
+        while (($row = fgetcsv($handle)) !== false) {
+            if ($row[2] === $building_code) { // building_code is column 2
+                $building_name = $row[0]; // building_name is column 0
+                break;
+            }
+        }
+        fclose($handle);
+    }
+
+    // Get charges from charges CSV using column headers
+    if (file_exists($charges_csv) && ($handle = fopen($charges_csv, 'r')) !== false) {
+        $charges_header = fgetcsv($handle); // Read headers
+        $header_map = array_flip($charges_header); // Create header to index mapping
+
+        while (($row = fgetcsv($handle)) !== false) {
+            if ($row[$header_map['building_name']] === $building_name) {
+                $charges[] = array(
+                    'utility' => isset($header_map['utility']) ? $row[$header_map['utility']] : '',
+                    'charge_name' => isset($header_map['charge_name']) ? $row[$header_map['charge_name']] : '',
+                    'charge_rate' => isset($header_map['charge_rate']) ? $row[$header_map['charge_rate']] : '',
+                    'charge_rate_unit' => isset($header_map['charge_rate_unit']) ? $row[$header_map['charge_rate_unit']] : ''
+                );
+            }
+        }
+        fclose($handle);
+    }
+
+    if (empty($charges)) {
+        return '<p>No rate information available for this building.</p>';
+    }
+
+    ob_start();
+    include plugin_dir_path(__FILE__) . 'templates/building-hub-rates.php';
+    return ob_get_clean();
+}
+add_shortcode('building_hub_rates', 'realm_building_hub_rates_display');
