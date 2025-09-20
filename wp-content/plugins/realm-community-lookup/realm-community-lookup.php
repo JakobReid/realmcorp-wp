@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: Realm Community Lookup
-Description: Community search and building hub functionality with multi-utility rate management, service cards, and billing system integration.
-Version: 4.0
+Description: Community search and building hub functionality with multi-utility rate management, service cards, and billing system integration. Modern search bar design with gradient button. Streamlined to show hub navigation only.
+Version: 4.2
 Author: Ryan Reid / Jakob Reid
 License: GPL2
 */
@@ -12,8 +12,16 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 
-// 1. Enqueue Scripts
+// 1. Enqueue Scripts and Styles
 function realm_cl_enqueue_scripts() {
+    // Enqueue our CSS
+    wp_enqueue_style(
+        'realm-community-lookup-style',
+        plugin_dir_url(__FILE__) . 'realm-community-lookup.css',
+        array(),
+        '4.2'
+    );
+
     // Enqueue our JS, depends on jQuery
     wp_enqueue_script(
         'realm-community-lookup-script',
@@ -22,7 +30,6 @@ function realm_cl_enqueue_scripts() {
         '2.0',
         true
     );
-
 
     // Make the admin-ajax URL available to JS
     wp_localize_script('realm-community-lookup-script', 'realmClAjax', [
@@ -35,49 +42,10 @@ add_action('wp_enqueue_scripts', 'realm_cl_enqueue_scripts', 5);
 // 2. Shortcode: [realm_community_lookup]
 function realm_cl_display_search_form() {
     ob_start();
-    ?>
-    <!-- You can adjust styling here to match your desired look -->
-    <div style="margin-bottom:1rem;">
-        <label for="realm_cl_search_query" style="font-size:1.25rem; display:block; margin-bottom:0.5rem;">
-            Enter Postcode:
-        </label>
-        <input
-            type="text"
-            id="realm_cl_search_query"
-            maxlength="4"
-            placeholder="e.g. 4207"
-            style="padding: 0.5rem; margin-right: 0.5rem; font-size:1.25rem; width:120px;"
-        />
-        <button
-            id="realm_cl_search_btn"
-            style="
-                padding: 0.5rem 1rem;
-                font-size: 1.25rem;
-                background-color:#0073AA;
-                color:#fff;
-                border:none;
-                border-radius:4px;
-                cursor:pointer;
-            "
-        >
-            Search
-        </button>
-    </div>
 
-    <div id="realm_cl_select_container" style="display:none; margin-bottom:1rem;">
-        <label for="realm_cl_site_select" style="font-size:1.25rem; display:block; margin-bottom:0.5rem;">
-            Select a Building:
-        </label>
-        <select
-            id="realm_cl_site_select"
-            style="padding: 0.5rem; font-size:1.25rem; width:250px;"
-        >
-            <option value="">-- Select Building --</option>
-        </select>
-    </div>
+    // Include the search form template (includes result templates too)
+    include plugin_dir_path(__FILE__) . 'templates/search-form.php';
 
-    <div id="realm_cl_pricing_details"></div>
-    <?php
     return ob_get_clean();
 }
 add_shortcode('realm_community_lookup', 'realm_cl_display_search_form');

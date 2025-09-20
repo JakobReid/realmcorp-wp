@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en-AU" data-scroll="0">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home - Realm</title>
+
+    <!-- Existing fonts and styles would be loaded here -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+
+    <style>
+        /* Reset and base styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; }
+
+        /* Header placeholder - your existing header styles would go here */
+        .site-header {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #015691;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #2d3748;
+            font-weight: 500;
+        }
+
+        /* Main content area */
+        main {
+            margin-top: 80px; /* Account for fixed header */
+        }
+
+        /* Redesigned Hero Section */
+        .realm-home-hero {
+            background: linear-gradient(135deg, rgba(1, 86, 145, 0.95) 0%, rgba(45, 55, 72, 0.95) 100%),
+                        url('https://url.xdx.mybluehost.me/wp-content/uploads/2023/11/buildings-6-scaled.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 2rem 1rem;
+        }
+
+        .realm-home-hero-inner {
+            max-width: 900px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .hero-intro {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            padding: 4rem 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero-tagline {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(3.5rem, 7vw, 6rem);
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            text-transform: capitalize;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-description {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: #ffffff;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            font-weight: 400;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            color: #015691;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: #5f6368;
+            margin-bottom: 3rem;
+            line-height: 1.4;
+            font-weight: 400;
+        }
+
+        .postcode-search-container {
+            margin-bottom: 3rem;
+        }
+
+        .search-input-group {
+            display: flex;
+            gap: 0;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+            box-shadow: 0 8px 25px rgba(1, 86, 145, 0.15);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .postcode-input {
+            flex: 1;
+            padding: 1.5rem 2rem;
+            font-size: 1.25rem;
+            font-family: 'Poppins', sans-serif;
+            border: none;
+            outline: none;
+            background: white;
+            color: #2d3748;
+            font-weight: 500;
+        }
+
+        .postcode-input::placeholder {
+            color: #a0aec0;
+            font-weight: 400;
+        }
+
+        .search-button {
+            background: linear-gradient(135deg, #015691 0%, #0d7ba8 100%);
+            color: white;
+            border: none;
+            padding: 1.5rem 2.5rem;
+            font-size: 1.25rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            white-space: nowrap;
+        }
+
+        .search-button:hover {
+            background: linear-gradient(135deg, #013d5f 0%, #0a5a7a 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(1, 86, 145, 0.3);
+        }
+
+        .building-select-container {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
+            display: none;
+        }
+
+        .select-label {
+            display: block;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #015691;
+            margin-bottom: 0.75rem;
+        }
+
+        .building-select {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            background: white;
+            color: #2d3748;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .building-select:focus {
+            border-color: #015691;
+            box-shadow: 0 0 0 3px rgba(1, 86, 145, 0.1);
+        }
+
+        .search-benefits {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #5f6368;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .benefit-item i {
+            color: #015691;
+            font-size: 1.25rem;
+            width: 1.5rem;
+            text-align: center;
+        }
+
+        .pricing-details-container {
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+
+        /* Footer placeholder */
+        .site-footer {
+            background: #2d3748;
+            color: white;
+            padding: 3rem 0;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .realm-home-hero {
+                background-attachment: scroll;
+                min-height: 100vh;
+                padding: 1rem;
+            }
+
+            .hero-intro {
+                margin-bottom: 2rem;
+            }
+
+            .hero-tagline {
+                font-size: clamp(2.5rem, 8vw, 4rem);
+            }
+
+            .hero-description {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+
+            .hero-content {
+                padding: 2.5rem 1.5rem;
+                border-radius: 15px;
+            }
+
+            .search-input-group {
+                flex-direction: column;
+                border-radius: 12px;
+            }
+
+            .postcode-input {
+                border-radius: 12px 12px 0 0;
+                padding: 1.25rem 1.5rem;
+                font-size: 1.1rem;
+            }
+
+            .search-button {
+                border-radius: 0 0 12px 12px;
+                padding: 1.25rem;
+                font-size: 1.1rem;
+                justify-content: center;
+            }
+
+            .search-benefits {
+                gap: 1.5rem;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-menu {
+                display: none; /* Simplified for demo */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">Realm</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="/about/">About Us</a></li>
+                    <li><a href="/contact/">Contact Us</a></li>
+                    <li><a href="/my-account-support-hub/">Support Hub</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Redesigned Hero Section with Big Postcode Input -->
+        <div class="realm-home-hero">
+            <div class="realm-home-hero-inner">
+                <!-- Better Billing section outside the card -->
+                <div class="hero-intro">
+                    <h1 class="hero-tagline">Better Billing.</h1>
+                    <p class="hero-description">At Realm, we specialise in accurate and easy-to-understand utility billing for residential and body corporate-managed communities. Whether it's water, electricity, or embedded network services, we streamline the process for both managers and residents—ensuring clarity, compliance, and peace of mind.</p>
+                </div>
+
+                <!-- Postcode search card -->
+                <div class="hero-content">
+                    <h2 class="hero-title">Find Your Building Hub</h2>
+                    <p class="hero-subtitle">Enter your postcode to access your utility billing portal and community information</p>
+
+                    <div class="postcode-search-container">
+                        <div class="search-input-group">
+                            <input
+                                type="text"
+                                id="realm_cl_search_query"
+                                class="postcode-input"
+                                maxlength="4"
+                                placeholder="Enter your postcode..."
+                                autocomplete="postal-code"
+                            />
+                            <button id="realm_cl_search_btn" class="search-button">
+                                <i class="fas fa-search"></i>
+                                <span>Search</span>
+                            </button>
+                        </div>
+
+                        <div id="realm_cl_select_container" class="building-select-container">
+                            <label for="realm_cl_site_select" class="select-label">
+                                Select your building:
+                            </label>
+                            <select id="realm_cl_site_select" class="building-select">
+                                <option value="">Choose your building...</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="search-benefits">
+                        <div class="benefit-item">
+                            <i class="fas fa-bolt"></i>
+                            <span>View utility rates</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Pay bills online</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-home"></i>
+                            <span>Manage services</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="realm_cl_pricing_details" class="pricing-details-container"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div>
+                <h3>Mail</h3>
+                <p>PO Box 153<br>Nerang QLD 4211</p>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <p>Phone: (07) 5555 5555<br>Email: info@realmcorp.com.au</p>
+            </div>
+            <div>
+                <h3>Services</h3>
+                <p>Utility Billing<br>Community Management<br>Customer Support</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript would be loaded here -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Placeholder for your existing realm-community-lookup.js functionality
+        // This would connect to your WordPress AJAX endpoints
+        console.log('Realm Community Lookup - Redesigned Home Page');
+
+        // Example search functionality (would connect to your actual AJAX)
+        $('#realm_cl_search_btn').on('click', function() {
+            const postcode = $('#realm_cl_search_query').val().trim();
+            if (!postcode) {
+                alert('Please enter a postcode.');
+                return;
+            }
+
+            // Your actual search logic would go here
+            console.log('Searching for postcode:', postcode);
+            alert('Search functionality would connect to your WordPress AJAX endpoint');
+        });
+    </script>
+</body>
+</html>
