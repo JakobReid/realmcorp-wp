@@ -60,7 +60,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             data-building-code="{{buildingCode}}"
             class="realm-hub-button"
         >
-            View {{buildingName}} Hub
+            Continue
             <span class="realm-hub-button-arrow">→</span>
         </button>
     </div>

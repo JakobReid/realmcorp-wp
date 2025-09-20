@@ -113,7 +113,7 @@ jQuery(document).ready(function($) {
                         Building found: <strong>${buildingName}</strong>
                     </p>
                     <button id="realm_cl_hub_btn" data-building-code="${item.building_code}" class="realm-hub-button">
-                        View ${buildingName} Hub
+                        Continue
                         <span class="realm-hub-button-arrow">→</span>
                     </button>
                 </div>
