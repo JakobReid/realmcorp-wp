@@ -1,0 +1,68 @@
+Building Name,Utility,Charge Name,Charge Rate
+4 Computer Court - Sandbah Enterprise,Water,Water Usage $/L,0.00138
+4 Computer Court - Sandbah Enterprise,Water,Waste Water Usage $/L,0.00519
+4 Computer Court - Sandbah Enterprise,Water,Water Access $/Day,1.0325
+4 Computer Court - Sandbah Enterprise,Water,Waste Water Access $/Day,0.2525
+4 Computer Court - Sandbah Enterprise,Water,State Bulk Water Charge $/L,0.00344
+4 Computer Court - Sandbah Enterprise,Water,Service Fee $/Day,0.32876
+Alladex,Water,Water Usage $/L,0.035
+Alladex,Water,Service Fee $/Day,0.43835
+Avenal CTS 17325,Water,Water Usage $/L,0.00076
+Avenal CTS 17325,Water,Tier 2 Water Usage $/L,0.00233
+Avenal CTS 17325,Water,Waste Water Usage $/L,0.00068
+Avenal CTS 17325,Water,Waste Water %*,0.9
+Avenal CTS 17325,Water,State Bulk Water Charge $/L,0.00344
+Avenal CTS 17325,Water,Service Fee $/Day,0.2863
+B By Halcyon,Water,Water Usage $/L,0.00496
+B By Halcyon,Water,Waste Water Usage $/L,0.00151
+B By Halcyon,Water,Waste Water %*,0.9
+B By Halcyon,Water,Water Access $/Day,0.11465
+B By Halcyon,Water,Waste Water Access $/Day,0.23543
+B By Halcyon,Water,Service Fee $/Day,0.273
+Beachfront Mirage ,Water,Water Usage $/L,0.00179
+Beachfront Mirage ,Water,Service Fee $/Day,0.33
+Chamonix,Water,Water Usage $/L,0.00484
+Chamonix,Water,Service Fee $/Day,0.32876
+Halcyon Greens,Water,Water Usage $/L,0.00482
+Halcyon Greens,Water,Waste Water Usage $/L,0.00519
+Halcyon Greens,Water,Waste Water %*,0.7
+Halcyon Greens,Water,Water Access $/Day,0.12611
+Halcyon Greens,Water,Waste Water Access $/Day,0.00931
+Halcyon Greens,Water,Service Fee $/Day,0.273
+Halcyon Promenade,Water,Water Usage $/L,0.00496
+Halcyon Promenade,Water,Waste Water Usage $/L,0.00151
+Halcyon Promenade,Water,Waste Water %*,0.9
+Halcyon Promenade,Water,Water Access $/Day,0.10668
+Halcyon Promenade,Water,Waste Water Access $/Day,0.2127
+Halcyon Promenade,Water,Service Fee $/Day,0.273
+Halcyon Rise,Water,Water Usage $/L,0.00448
+Halcyon Rise,Water,Water Access $/Day,0.11931
+Halcyon Rise,Water,Waste Water Access $/Day,0.79223
+Halcyon Rise,Water,Service Fee $/Day,0.273
+Paradise Place Resort,Water,Water Usage $/L,0.00076
+Paradise Place Resort,Water,Tier 2 Water Usage $/L,0.00233
+Paradise Place Resort,Water,Waste Water Usage $/L,0.00068
+Paradise Place Resort,Water,Waste Water %*,0.9
+Paradise Place Resort,Water,State Bulk Water Charge $/L,0.00344
+Paradise Place Resort,Water,Service Fee $/Day,0.2863
+Sicura,Water,Water Usage $/L,0.00449
+Sicura,Water,Service Fee $/Day,0.32876
+Strata Plan 104431,Water,Water Usage $/L,0.00392
+Strata Plan 104431,Water,Tier 2 Water Usage $/L,0.0062
+Strata Plan 104431,Water,Service Fee $/Day,0.33
+Summerfield,Water,Water Usage $/L,0.00519
+Summerfield,Water,Tier 2 Water Usage $/L,0.00535
+Summerfield,Water,Service Fee $/Day,0.32876
+The Beachfront Port Douglas,Water,Water Usage $/L,0.00179
+The Beachfront Port Douglas,Water,Service Fee $/Day,0.32876
+The Lakes Port Douglas,Water,Water Usage $/L,0.00179
+The Lakes Port Douglas,Water,Service Fee $/Day,0.32876
+Vorkas Pty Ltd,Water,Water Usage $/L,0.00519
+Vorkas Pty Ltd,Water,Tier 2 Water Usage $/L,0.00535
+Vorkas Pty Ltd,Water,Service Fee $/Day,0.32876
+Willamarie,Water,Water Usage $/L,0.00076
+Willamarie,Water,Tier 2 Water Usage $/L,0.00223
+Willamarie,Water,Waste Water Usage $/L,0.00068
+Willamarie,Water,Waste Water %*,0.9
+Willamarie,Water,State Bulk Water Charge $/L,0.00344
+Willamarie,Water,Service Fee $/Day,0.32876

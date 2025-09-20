@@ -96,33 +96,53 @@ function realm_cl_handle_search() {
     $query = isset($_POST['query']) ? sanitize_text_field($_POST['query']) : '';
     $results = array();
 
-    // CSV path in the same folder as this plugin file
-    $csv_file = plugin_dir_path(__FILE__) . 'data.csv';
+    // CSV paths in the same folder as this plugin file
+    $communities_csv = plugin_dir_path(__FILE__) . 'communities.csv';
+    $charges_csv = plugin_dir_path(__FILE__) . 'community_charges.csv';
 
-    if ( file_exists($csv_file) && ($handle = fopen($csv_file, 'r')) !== false ) {
-        // If your CSV has a header row, uncomment to skip it:
+    // First, read all charges data into memory for quick lookup
+    $charges_by_building = array();
+    if ( file_exists($charges_csv) && ($charges_handle = fopen($charges_csv, 'r')) !== false ) {
+        // Skip header row
+        $charges_header = fgetcsv($charges_handle);
+
+        // Read all charges data
+        while (($charge_row = fgetcsv($charges_handle)) !== false) {
+            $building_name = $charge_row[0];
+            if (!isset($charges_by_building[$building_name])) {
+                $charges_by_building[$building_name] = array();
+            }
+            $charges_by_building[$building_name][] = array(
+                'utility' => $charge_row[1],
+                'charge_name' => $charge_row[2],
+                'charge_rate' => $charge_row[3]
+            );
+        }
+        fclose($charges_handle);
+    }
+
+    // Now read communities data and match by postcode
+    if ( file_exists($communities_csv) && ($handle = fopen($communities_csv, 'r')) !== false ) {
+        // Skip header row
         $header = fgetcsv($handle);
 
         // Loop through each row of the CSV
         while (($row = fgetcsv($handle)) !== false) {
-            // Adjust indices based on your CSV structure
-            // row[2] is assumed to be the Postcode
-            if (strcasecmp(trim($row[2]), trim($query)) === 0) {
+            // row[3] is the Postcode column in communities.csv
+            if (strcasecmp(trim($row[3]), trim($query)) === 0) {
+                $building_name = $row[0];
+
+                // Get charges for this building
+                $charges = isset($charges_by_building[$building_name]) ? $charges_by_building[$building_name] : array();
+
                 $results[] = array(
-                    'building_name'  => $row[0],
-                    'building_code'  => $row[1],
-                    'postcode'       => $row[2],
-                    'water_authority'=> $row[3],
-                    'classification' => $row[4],
-                    'water_usage'    => $row[5],
-                    'tier2_usage'    => $row[6],
-                    'waste_water_usage' => $row[7],
-                    'waste_water_percent' => $row[8],
-                    'water_access_day'   => $row[9],
-                    'waste_water_access_day' => $row[10],
-                    'state_bulk_water_charge' => $row[11],
-                    'service_fee_day'         => $row[12],
-                    'service_fee_owners'      => $row[13],
+                    'building_name'     => $row[0],
+                    'billing_system'    => $row[1],
+                    'building_code'     => $row[2],
+                    'postcode'          => $row[3],
+                    'water_authority'   => $row[4],
+                    'classification'    => $row[5],
+                    'charges'           => $charges
                 );
             }
         }

@@ -73,9 +73,9 @@ jQuery(document).ready(function($) {
         let pricingDetails = $('#realm_cl_pricing_details');
 
         // We'll handle the Building Name/Postcode in the table header,
-        // but if they’re blank or 'NA', we skip or set them to 'N/A'.
-        let bldName   = isSkip(item.building_name) ? 'N/A' : item.building_name;
-        let bldPost   = isSkip(item.postcode)      ? ''    : item.postcode;
+        // but if they're blank or 'NA', we skip or set them to 'N/A'.
+        let buildingName = isSkip(item.building_name) ? 'N/A' : item.building_name;
+        let buildingPost = isSkip(item.postcode)      ? ''    : item.postcode;
 
         // Start building the HTML
         let tableHtml = `
@@ -83,7 +83,7 @@ jQuery(document).ready(function($) {
                 <thead>
                     <tr>
                         <th colspan="2" style="padding: 8px; border: 1px solid #ccc; background: #eee; font-size:1.2rem;">
-                            Rates for ${bldName} ${bldPost ? '(Postcode: ' + bldPost + ')' : ''}
+                            Rates for ${buildingName} ${buildingPost ? '(Postcode: ' + buildingPost + ')' : ''}
                         </th>
                     </tr>
                 </thead>
@@ -102,39 +102,33 @@ jQuery(document).ready(function($) {
             }
         }
 
-        // DO NOT display building code => skip item.building_code entirely.
-
-        // Water Authority
+        // Display building info
+        addRow('Billing System', item.billing_system);
         addRow('Water Authority', item.water_authority);
-
-        // Classification
         addRow('Classification', item.classification);
 
-        // Water Usage ($/L)
-        addRow('Water Usage ($/L)', item.water_usage);
+        // Display charges from the charges array
+        if (item.charges && item.charges.length > 0) {
+            // Add a separator row
+            tableHtml += `
+                <tr>
+                    <td colspan="2" style="border:1px solid #ccc; padding:8px; background:#f5f5f5; font-weight:bold;">
+                        Water Charges
+                    </td>
+                </tr>
+            `;
 
-        // Tier 2 Water Usage ($/L)
-        addRow('Tier 2 Water Usage ($/L)', item.tier2_usage);
+            // Display each charge
+            item.charges.forEach(function(charge) {
+                if (!isSkip(charge.charge_rate)) {
+                    let chargeLabel = charge.charge_name;
+                    // Format the charge rate appropriately
+                    let chargeValue = charge.charge_rate;
 
-        // Waste Water Usage ($/L)
-        addRow('Waste Water Usage ($/L)', item.waste_water_usage);
-
-        // Waste Water %* => only display if not blank/NA
-        addRow('Waste Water %*', item.waste_water_percent);
-
-        // Water Access ($/Day)
-        addRow('Water Access ($/Day)', item.water_access_day);
-
-        // Waste Water Access ($/Day)
-        addRow('Waste Water Access ($/Day)', item.waste_water_access_day);
-
-        // State Bulk Water Charge ($/L)
-        addRow('State Bulk Water Charge ($/L)', item.state_bulk_water_charge);
-
-        // Service Fee ($/Day) => Only if service_fee_owners is 'Y'
-        // and it’s not NA/blank
-        if (item.service_fee_owners === 'Y' && !isSkip(item.service_fee_day)) {
-            addRow('Service Fee ($/Day)', item.service_fee_day);
+                    // Add the charge row
+                    addRow(chargeLabel, chargeValue);
+                }
+            });
         }
 
         tableHtml += `
