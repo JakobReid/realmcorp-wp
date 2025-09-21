@@ -24,6 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             autocomplete="postal-code"
         />
         <button id="realm_cl_search_btn" class="realm-search-button">
+            <i class="fas fa-search"></i>
             Search
         </button>
     </div>

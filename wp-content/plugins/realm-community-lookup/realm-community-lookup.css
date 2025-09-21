@@ -34,7 +34,7 @@
 .realm-search-input {
     flex: 1;
     padding: 1.5rem 2rem !important;
-    font-size: 1.25rem !important;
+    font-size: 1.25rem;
     font-family: 'Poppins', sans-serif !important;
     border: none !important;
     outline: none !important;
@@ -180,6 +180,7 @@
     font-size: 1.5rem;
 }
 
+
 /* Loading Spinner */
 .realm-loading {
     display: none;
@@ -230,12 +231,6 @@
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-    /* Fix WordPress block padding overrides */
-    .wp-block-group.alignfull {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-    }
-
     .wp-block-group .wp-block-group {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
@@ -282,19 +277,10 @@
     }
 }
 
+/* Extra small mobile devices */
 @media (max-width: 480px) {
-    /* Extra small mobile devices */
-    .wp-block-group.alignfull {
-        padding-left: 0.5rem !important;
-        padding-right: 0.5rem !important;
-    }
 
-    .wp-block-group .wp-block-group {
-        padding-left: 0.5rem !important;
-        padding-right: 0.5rem !important;
-    }
-
-    .wp-block-column {
+    .service-card {
         padding-left: 0.5rem !important;
         padding-right: 0.5rem !important;
     }

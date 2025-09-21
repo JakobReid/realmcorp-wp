@@ -72,7 +72,7 @@
                 <?php else: ?>
                     <div style="opacity: 0.5; cursor: not-allowed;">
                 <?php endif; ?>
-                    <div class="service-icon"><i class="fa-solid fa-house"></i></div>
+                    <div class="service-icon"><i class="fas fa-university"></i></div>
                     <h3>Direct Debit</h3>
                     <p>Set up automatic payments for hassle-free bill management</p>
                 <?php if (!empty($urls['direct_debit'])): ?>

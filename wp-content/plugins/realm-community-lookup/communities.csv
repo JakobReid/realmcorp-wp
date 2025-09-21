@@ -1,20 +1,20 @@
-Building Name,Billing System,Building Code,Postcode,Water Authority,Classification,,,,
-19  Computer Court - Sandbah Enterprise 2,StrataMax,COMP 8,,Gold Coast Council,,,,,
-4 Computer Court - Sandbah Enterprise,StrataMax,COMP 7,4207,Gold Coast Council,Commercial,,,,
-Alladex,StrataMax,COMP 5,4151,Queensland Urban Utilities,Hot Water,,,,
-Avenal CTS 17325,StrataMax,17325,4567,Unity Water,Residential,,,,
-B By Halcyon,StrataMax,COMP 4,4556,Unity Water,Residential ,,,,
-Beachfront Mirage ,StrataMax,107089,4877,Douglas Shire Council,Residential,,,,
-Chamonix,StrataMax,27014,4218,Gold Coast Council,Residential,,,,
-Escape Villas Port Douglas,StrataMax,54681,4877,Douglas Shire Council,Residential,,,,
-Halcyon Greens,StrataMax,COMP 2,4209,Gold Coast Council,Residential,,,,
-Halcyon Promenade,StrataMax,COMP 1,4505,Queensland Urban Utilities,Residential,,,,
-Halcyon Rise,StrataMax,COMP 3,4133,Logan City Council,Residential,,,,
-Paradise Place Resort,StrataMax,32336,4564,Unity Water,Residential,,,,
-Sicura,StrataMax,55077,4118,Logan City Council,Residential,,,,
-Strata Plan 104431,StrataMax,104431,2486,Tweed Shire Council,Residential,,,,
-Summerfield,StrataMax,25212,4067,Queensland Urban Utilities,Residential,,,,
-The Beachfront Port Douglas,StrataMax,31795,4877,Douglas Shire Council,Residential,,,,
-The Lakes Port Douglas,StrataMax,32886,4877,Douglas Shire Council,Residential,,,,
-Vorkas Pty Ltd,BlueBilling,COMP 6,4151,Queensland Urban Utilities,Commercial,,,,
-Willamarie,BlueBilling,25567,4558,Unity Water,Residential,,,,
+building_name,billing_system,building_code,postcode,water_authority,classification
+19  Computer Court - Sandbah Enterprise 2,StrataMax,COMP 8,,Gold Coast Council,
+4 Computer Court - Sandbah Enterprise,StrataMax,COMP 7,4207,Gold Coast Council,Commercial
+Alladex,StrataMax,COMP 5,4151,Queensland Urban Utilities,Hot Water
+Avenal CTS 17325,StrataMax,17325,4567,Unity Water,Residential
+B By Halcyon,StrataMax,COMP 4,4556,Unity Water,Residential 
+Beachfront Mirage ,StrataMax,107089,4877,Douglas Shire Council,Residential
+Chamonix,StrataMax,27014,4218,Gold Coast Council,Residential
+Escape Villas Port Douglas,StrataMax,54681,4877,Douglas Shire Council,Residential
+Halcyon Greens,StrataMax,COMP 2,4209,Gold Coast Council,Residential
+Halcyon Promenade,StrataMax,COMP 1,4505,Queensland Urban Utilities,Residential
+Halcyon Rise,StrataMax,COMP 3,4133,Logan City Council,Residential
+Paradise Place Resort,StrataMax,32336,4564,Unity Water,Residential
+Sicura,StrataMax,55077,4118,Logan City Council,Residential
+Strata Plan 104431,StrataMax,104431,2486,Tweed Shire Council,Residential
+Summerfield,StrataMax,25212,4067,Queensland Urban Utilities,Residential
+The Beachfront Port Douglas,StrataMax,31795,4877,Douglas Shire Council,Residential
+The Lakes Port Douglas,StrataMax,32886,4877,Douglas Shire Council,Residential
+Vorkas Pty Ltd,BlueBilling,COMP 6,4151,Queensland Urban Utilities,Commercial
+Willamarie,BlueBilling,25567,4558,Unity Water,Residential

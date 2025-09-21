@@ -17,17 +17,6 @@
 }
 
 /* === Building Hub Styles === */
-/* Global Poppins override for building hub */
-.building-hub-hero,
-.building-hub-hero *,
-.building-services-section,
-.building-services-section *,
-.building-rates-section,
-.building-rates-section *,
-.service-card,
-.service-card * {
-    font-family: 'Poppins', sans-serif !important;
-}
 
 .building-services-title {
     color: #015691 !important;
@@ -40,6 +29,8 @@
 .building-services-subtitle {
     color: #5f6368 !important;
     text-align: center !important;
+    margin-top: 0 !important;
+    margin-bottom: 2rem !important;
 }
 
 
@@ -56,7 +47,7 @@
 }
 
 .building-hub-hero {
-    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%) !important;
+    background: #1a202c !important;
     color: white !important;
     padding: 3rem !important;
     margin: 0 0 2rem 0 !important;
@@ -170,6 +161,16 @@
     font-family: 'Poppins', sans-serif !important;
     font-weight: 600 !important;
     margin-top: 1rem;
+    margin-bottom: 0 !important;
+}
+
+.building-services-section h1,
+.building-services-section h2,
+.building-services-section h3,
+.building-services-section h4,
+.building-services-section h5,
+.building-services-section h6 {
+    margin-bottom: 0 !important;
 }
 
 .service-card p {
@@ -343,6 +344,65 @@
     background: #f8f9fa;
 }
 
+/* === Responsive Home Page Styles === */
+
+/* Hero section responsive padding */
+@media (min-width: 768px) {
+    .realm-home-hero-section {
+        padding-left: 4rem !important;
+        padding-right: 4rem !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .realm-home-hero-section {
+        padding-left: 6rem !important;
+        padding-right: 6rem !important;
+    }
+}
+
+@media (min-width: 1280px) {
+    .realm-home-hero-section {
+        padding-left: 10rem !important;
+        padding-right: 10rem !important;
+    }
+}
+
+/* Search card wrapper alignment */
+.realm-search-card-wrapper {
+    width: 100%;
+    max-width: 600px;
+}
+
+@media (max-width: 767px) {
+    .realm-search-card-wrapper {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .realm-hero-title {
+        text-align: center !important;
+    }
+
+    .realm-search-title {
+        text-align: center !important;
+    }
+
+    .realm-search-description {
+        text-align: center !important;
+    }
+
+    /* Center the search form on mobile */
+    .realm-search-shortcode .realm-search-wrapper {
+        text-align: center;
+    }
+
+    .realm-search-shortcode .realm-search-input-group {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 /* Mobile responsive */
 @media (max-width: 768px) {
     .building-details {
@@ -367,5 +427,27 @@
     .rates-table td {
         padding: 0.75rem;
         font-size: 0.9rem;
+    }
+
+    .realm-hero-container {
+        padding-top: 0 !important;
+    }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+    .realm-search-card {
+        padding: var(--wp--preset--spacing--40) !important;
+        border-radius: 15px !important;
+    }
+
+    .realm-home-hero-section {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-top: 3rem !important;
+    }
+
+    .realm-search-input-group {
+        font-size: 1rem;
     }
 }

@@ -14,6 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // 1. Enqueue Scripts and Styles
 function realm_cl_enqueue_scripts() {
+
     // Enqueue our CSS
     wp_enqueue_style(
         'realm-community-lookup-style',
@@ -37,6 +38,7 @@ function realm_cl_enqueue_scripts() {
     ]);
 }
 add_action('wp_enqueue_scripts', 'realm_cl_enqueue_scripts', 5);
+
 
 
 // 2. Shortcode: [realm_community_lookup]
@@ -156,13 +158,16 @@ function realm_building_hub_hero_display() {
     if ($building_code) {
         $communities_csv = plugin_dir_path(__FILE__) . 'communities.csv';
         if (file_exists($communities_csv) && ($handle = fopen($communities_csv, 'r')) !== false) {
-            fgetcsv($handle); // Skip header
+            // Read header row and create mapping
+            $header = fgetcsv($handle);
+            $header_map = array_flip($header);
+
             while (($row = fgetcsv($handle)) !== false) {
-                if ($row[2] === $building_code) { // building_code is column 2
-                    $building_name = $row[0] . ' Hub'; // building_name is column 0
-                    $billing_system = $row[1]; // billing_system is column 1
-                    $postcode = $row[3]; // postcode is column 3
-                    $classification = $row[5]; // classification is column 5
+                if ($row[$header_map['building_code']] === $building_code) {
+                    $building_name = $row[$header_map['building_name']];
+                    $billing_system = $row[$header_map['billing_system']];
+                    $postcode = $row[$header_map['postcode']];
+                    $classification = $row[$header_map['classification']];
                     break;
                 }
             }

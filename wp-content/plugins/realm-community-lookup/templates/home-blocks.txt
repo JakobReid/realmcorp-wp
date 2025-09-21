@@ -1,0 +1,43 @@
+<!-- wp:group {"align":"full","className":"realm-home-hero-section","style":{"spacing":{"blockGap":"40px","padding":{"top":"5rem","bottom":"0","left":"2rem","right":"2rem"}},"background":{"backgroundImage":{"url":"https://url.xdx.mybluehost.me/wp-content/uploads/2023/11/buildings-6-scaled.jpg","id":271,"source":"file","title":"buildings (6)"}},"dimensions":{"minHeight":"100vh"}},"backgroundColor":"primary","textColor":"black","layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull realm-home-hero-section has-black-color has-primary-background-color has-text-color has-background" style="min-height:100vh;padding-top:5rem;padding-right:2rem;padding-bottom:0;padding-left:2rem">
+
+    <!-- wp:group {"className":"realm-hero-container","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}}},"layout":{"type":"constrained","wideSize":"1200px"}} -->
+    <div class="wp-block-group realm-hero-container" style="padding-top:var(--wp--preset--spacing--70);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--50)">
+
+        <!-- wp:heading {"textAlign":"left","level":1,"className":"realm-hero-title","style":{"typography":{"textTransform":"capitalize","fontSize":"clamp(3rem, 8vw, 5rem)"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}},"border":{"width":"0px","style":"none"}},"textColor":"base"} -->
+        <h1 class="wp-block-heading has-text-align-left realm-hero-title has-base-color has-text-color has-link-color" style="border-style:none;border-width:0px;font-size:clamp(3rem, 8vw, 5rem);text-transform:capitalize">Better Billing.</h1>
+        <!-- /wp:heading -->
+
+        <!-- wp:group {"className":"realm-search-card-wrapper","layout":{"type":"constrained","wideSize":"600px","justifyContent":"left"}} -->
+        <div class="wp-block-group realm-search-card-wrapper">
+
+            <!-- wp:group {"className":"realm-search-card","style":{"color":{"background":"#fafbfc"},"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|60","right":"var:preset|spacing|60"}},"border":{"radius":"20px"},"shadow":"var:preset|shadow|sharp"}} -->
+            <div class="wp-block-group realm-search-card has-background" style="border-radius:20px;background-color:#fafbfc;padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--60);box-shadow:var(--wp--preset--shadow--sharp)">
+
+                <!-- wp:heading {"textAlign":"left","level":2,"className":"realm-search-title","style":{"elements":{"link":{"color":{"text":"var:preset|color|primary"}}},"typography":{"fontSize":"clamp(1.75rem, 4vw, 2.5rem)"}},"textColor":"primary"} -->
+                <h2 class="wp-block-heading has-text-align-left realm-search-title has-primary-color has-text-color has-link-color" style="font-size:clamp(1.75rem, 4vw, 2.5rem)">Find your Community</h2>
+                <!-- /wp:heading -->
+
+                <!-- wp:paragraph {"align":"left","className":"realm-search-description","style":{"elements":{"link":{"color":{"text":"#5f6368"}}},"color":{"text":"#5f6368"},"typography":{"fontSize":"clamp(1rem, 2vw, 1.125rem)"}}} -->
+                <p class="has-text-align-left realm-search-description has-text-color has-link-color" style="color:#5f6368;font-size:clamp(1rem, 2vw, 1.125rem)">Enter your postcode below to view your current utility rates.</p>
+                <!-- /wp:paragraph -->
+
+                <!-- wp:spacer {"height":"20px"} -->
+                <div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+                <!-- /wp:spacer -->
+
+                <!-- wp:shortcode {"className":"realm-search-shortcode"} -->
+                [realm_community_lookup]
+                <!-- /wp:shortcode -->
+
+            </div>
+            <!-- /wp:group -->
+
+        </div>
+        <!-- /wp:group -->
+
+    </div>
+    <!-- /wp:group -->
+
+</div>
+<!-- /wp:group -->
