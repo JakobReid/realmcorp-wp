@@ -37,7 +37,7 @@ function realm_cl_enqueue_scripts() {
         'ajax_url' => admin_url('admin-ajax.php'),
     ]);
 }
-add_action('wp_enqueue_scripts', 'realm_cl_enqueue_scripts', 5);
+add_action('wp_enqueue_scripts', 'realm_cl_enqueue_scripts', 999);
 
 
 
