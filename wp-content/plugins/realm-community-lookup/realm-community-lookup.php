@@ -156,27 +156,24 @@ add_shortcode('building_hub', 'realm_building_hub_display');
 
 // 6. Building Hub Hero Shortcode: [building_hub_hero]
 function realm_building_hub_hero_display() {
-    // Get URL parameters
-    $building_code = isset($_GET['building']) ? sanitize_text_field($_GET['building']) : '';
+    // Get building name from URL parameter
+    $building_name = isset($_GET['building']) ? sanitize_text_field($_GET['building']) : '';
 
-    // Try to get building name from CSV if we have building code
-    $building_name = 'Building Hub';
+    // Try to get building data from CSV
     $postcode = '';
     $billing_system = '';
     $classification = '';
     $electricity_authority = '';
     $water_authority = '';
 
-    if ($building_code) {
+    if ($building_name) {
         $communities_csv = plugin_dir_path(__FILE__) . 'communities.csv';
         if (file_exists($communities_csv) && ($handle = fopen($communities_csv, 'r')) !== false) {
             // Read header row and create mapping
             $header = array_flip(fgetcsv($handle));
 
-            // Building per row
             while (($row = fgetcsv($handle)) !== false) {
-                if ($row[$header['building_code']] === $building_code) {
-                    $building_name = $row[$header['building_name']];
+                if ($row[$header['building_name']] === $building_name) {
                     $billing_system = strtolower(str_replace(' ', '', trim($row[$header['billing_system']])));
                     $postcode = $row[$header['postcode']];
                     $classification = $row[$header['classification']];
@@ -187,6 +184,11 @@ function realm_building_hub_hero_display() {
             }
             fclose($handle);
         }
+    }
+
+    // Fallback if not found
+    if (empty($building_name)) {
+        $building_name = 'Building Hub';
     }
 
     // Set URLs based on billing system
@@ -230,10 +232,10 @@ add_shortcode('building_hub_hero', 'realm_building_hub_hero_display');
 
 // 7. Building Hub Services Shortcode: [building_hub_services]
 function realm_building_hub_services_display() {
-    // Get URL parameters
-    $building_code = isset($_GET['building']) ? sanitize_text_field($_GET['building']) : '';
+    // Get building name from URL parameter
+    $building_name = isset($_GET['building']) ? sanitize_text_field($_GET['building']) : '';
 
-    if (!$building_code) {
+    if (!$building_name) {
         return '<p>No building selected.</p>';
     }
 
@@ -244,7 +246,7 @@ function realm_building_hub_services_display() {
     if (file_exists($communities_csv) && ($handle = fopen($communities_csv, 'r')) !== false) {
         $header = array_flip(fgetcsv($handle));
         while (($row = fgetcsv($handle)) !== false) {
-            if ($row[$header['building_code']] === $building_code) {
+            if ($row[$header['building_name']] === $building_name) {
                 $billing_system = strtolower(str_replace(' ', '', trim($row[$header['billing_system']])));
                 break;
             }
@@ -292,31 +294,16 @@ add_shortcode('building_hub_services', 'realm_building_hub_services_display');
 
 // 7. Building Hub Rates Shortcode: [building_hub_rates]
 function realm_building_hub_rates_display() {
-    // Get URL parameters
-    $building_code = isset($_GET['building']) ? sanitize_text_field($_GET['building']) : '';
+    // Get building name from URL parameter
+    $building_name = isset($_GET['building']) ? sanitize_text_field($_GET['building']) : '';
 
-    if (!$building_code) {
+    if (!$building_name) {
         return '<p>No building selected.</p>';
     }
 
     // Get building data from CSV
-    $building_name = '';
     $charges = array();
-
-    $communities_csv = plugin_dir_path(__FILE__) . 'communities.csv';
     $charges_csv = plugin_dir_path(__FILE__) . 'community_charges.csv';
-
-    // Get building name from communities CSV
-    if (file_exists($communities_csv) && ($handle = fopen($communities_csv, 'r')) !== false) {
-        $header = array_flip(fgetcsv($handle));
-        while (($row = fgetcsv($handle)) !== false) {
-            if ($row[$header['building_code']] === $building_code) {
-                $building_name = $row[$header['building_name']];
-                break;
-            }
-        }
-        fclose($handle);
-    }
 
     // Get charges from charges CSV
     if (file_exists($charges_csv) && ($handle = fopen($charges_csv, 'r')) !== false) {

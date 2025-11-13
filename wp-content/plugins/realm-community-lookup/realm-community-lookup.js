@@ -104,7 +104,7 @@ jQuery(document).ready(function($) {
             // Use template and replace placeholders
             hubButton = resultTemplate
                 .replace(/{{buildingName}}/g, buildingName)
-                .replace('{{buildingCode}}', item.building_code);
+                .replace('{{buildingName}}', buildingName);
         } else {
             // Fallback to direct HTML if template not loaded
             hubButton = `
@@ -112,7 +112,7 @@ jQuery(document).ready(function($) {
                     <p class="realm-result-text">
                         Building found: <strong>${buildingName}</strong>
                     </p>
-                    <button id="realm_cl_hub_btn" data-building-code="${item.building_code}" class="realm-hub-button">
+                    <button id="realm_cl_hub_btn" data-building-name="${buildingName}" class="realm-hub-button">
                         Continue
                         <span class="realm-hub-button-arrow">→</span>
                     </button>
@@ -124,9 +124,8 @@ jQuery(document).ready(function($) {
 
         // Handle hub button click
         $('#realm_cl_hub_btn').on('click', function() {
-            let buildingCode = $(this).data('building-code');
-            // For now, just placeholder - will be replaced with actual hub page
-            window.location.href = '/staging/5684/building-hub/?building=' + encodeURIComponent(buildingCode);
+            let buildingName = $(this).data('building-name');
+            window.location.href = '/staging/5684/building-hub/?building=' + encodeURIComponent(buildingName);
         });
     }
 });

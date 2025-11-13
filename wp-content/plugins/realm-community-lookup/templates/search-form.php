@@ -58,7 +58,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         </p>
         <button
             id="realm_cl_hub_btn"
-            data-building-code="{{buildingCode}}"
+            data-building-name="{{buildingName}}"
             class="realm-hub-button"
         >
             Continue
