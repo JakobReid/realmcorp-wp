@@ -59,10 +59,10 @@ jQuery(document).ready(function($) {
                     // Save data for use after user picks from dropdown
                     window.realmClSiteData = response;
 
-                    // Fill the <select> with building names
+                    // Fill the <select> with display names
                     response.forEach(function(item, index) {
-                        let bldName = item.building_name || ('Building ' + (index + 1));
-                        selectElement.append('<option value="' + index + '">' + bldName + '</option>');
+                        let displayName = item.display_name || item.building_name || ('Building ' + (index + 1));
+                        selectElement.append('<option value="' + index + '">' + displayName + '</option>');
                     });
                 }
             },

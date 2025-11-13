@@ -1,70 +1,218 @@
 building_name,utility,charge_name,charge_rate,charge_rate_unit
-4 Computer Court - Sandbah Enterprise,Water,Water Usage,0.00138, $/L
-4 Computer Court - Sandbah Enterprise,Water,Waste Water Usage,0.00519, $/L
-4 Computer Court - Sandbah Enterprise,Water,Water Access ,1.0325,$/Day
-4 Computer Court - Sandbah Enterprise,Water,Waste Water Access ,0.2525,$/Day
-4 Computer Court - Sandbah Enterprise,Water,State Bulk Water Charge,0.00344, $/L
-4 Computer Court - Sandbah Enterprise,Water,Service Fee ,0.32876,$/Day
-Alladex,Water,Water Usage,0.035, $/L
-Alladex,Water,Service Fee ,0.43835,$/Day
-Avenal CTS 17325,Water,Water Usage,0.00076, $/L
-Avenal CTS 17325,Water,Tier 2 Water Usage,0.00233, $/L
-Avenal CTS 17325,Water,Waste Water Usage,0.00068, $/L
-Avenal CTS 17325,Water,Waste Water *,0.9,%
-Avenal CTS 17325,Water,State Bulk Water Charge,0.00344, $/L
-Avenal CTS 17325,Water,Service Fee ,0.2863,$/Day
-B By Halcyon,Water,Water Usage,0.00496, $/L
-B By Halcyon,Water,Waste Water Usage,0.00151, $/L
-B By Halcyon,Water,Waste Water *,0.9,%
-B By Halcyon,Water,Water Access ,0.11465,$/Day
-B By Halcyon,Water,Waste Water Access ,0.23543,$/Day
-B By Halcyon,Water,Service Fee ,0.273,$/Day
-Beachfront Mirage ,Water,Water Usage,0.00179, $/L
-Beachfront Mirage ,Water,Service Fee ,0.33,$/Day
-Chamonix,Water,Water Usage,0.00484, $/L
-Chamonix,Water,Service Fee ,0.32876,$/Day
-Halcyon Greens,Water,Water Usage,0.00482, $/L
-Halcyon Greens,Water,Waste Water Usage,0.00519, $/L
-Halcyon Greens,Water,Waste Water *,0.7,%
-Halcyon Greens,Water,Water Access ,0.12611,$/Day
-Halcyon Greens,Water,Waste Water Access ,0.00931,$/Day
-Halcyon Greens,Water,Service Fee ,0.273,$/Day
-Halcyon Promenade,Water,Water Usage,0.00496, $/L
-Halcyon Promenade,Water,Waste Water Usage,0.00151, $/L
-Halcyon Promenade,Water,Waste Water *,0.9,%
-Halcyon Promenade,Water,Water Access ,0.10668,$/Day
-Halcyon Promenade,Water,Waste Water Access ,0.2127,$/Day
-Halcyon Promenade,Water,Service Fee ,0.273,$/Day
-Halcyon Rise,Water,Water Usage,0.00448, $/L
-Halcyon Rise,Water,Water Access ,0.11931,$/Day
-Halcyon Rise,Water,Waste Water Access ,0.79223,$/Day
-Halcyon Rise,Water,Service Fee ,0.273,$/Day
-Paradise Place Resort,Water,Water Usage,0.00076, $/L
-Paradise Place Resort,Water,Tier 2 Water Usage,0.00233, $/L
-Paradise Place Resort,Water,Waste Water Usage,0.00068, $/L
-Paradise Place Resort,Water,Waste Water *,0.9,%
-Paradise Place Resort,Water,State Bulk Water Charge,0.00344, $/L
-Paradise Place Resort,Water,Service Fee ,0.2863,$/Day
-Sicura,Water,Water Usage,0.00449, $/L
-Sicura,Water,Service Fee ,0.32876,$/Day
-Strata Plan 104431,Water,Water Usage,0.00392, $/L
-Strata Plan 104431,Water,Tier 2 Water Usage,0.0062, $/L
-Strata Plan 104431,Water,Service Fee ,0.33,$/Day
-Summerfield,Water,Water Usage,0.00519, $/L
-Summerfield,Water,Tier 2 Water Usage,0.00535, $/L
-Summerfield,Water,Service Fee ,0.32876,$/Day
-The Beachfront Port Douglas,Water,Water Usage,0.00179, $/L
-The Beachfront Port Douglas,Water,Service Fee ,0.32876,$/Day
-The Lakes Port Douglas,Water,Water Usage,0.00179, $/L
-The Lakes Port Douglas,Water,Service Fee ,0.32876,$/Day
-Vorkas Pty Ltd,Water,Water Usage,0.00519, $/L
-Vorkas Pty Ltd,Water,Tier 2 Water Usage,0.00535, $/L
-Vorkas Pty Ltd,Water,Service Fee ,0.32876,$/Day
-Willamarie,Water,Water Usage,0.00076, $/L
-Willamarie,Water,Tier 2 Water Usage,0.00223, $/L
-Willamarie,Water,Waste Water Usage,0.00068, $/L
-Willamarie,Water,Waste Water *,0.9,%
-Willamarie,Water,State Bulk Water Charge,0.00344, $/L
-Willamarie,Water,Service Fee ,0.32876,$/Day
-Willamarie,Electricity,Elec Fee ,0.32876,$/Day
-Willamarie,Electricity,Service Fee ,0.32876,$/Day
+17A Ern Harley Drive,Water,Cold Water,4.98,/kL
+18 Blanck Street CTS 37361,Water,Cold Water,4.98,/kL
+18 Blanck Street CTS 37361,Water,Service Fee,0.414,/account/day
+18 to 20 David Street,Electricity,Electricity,0.27,/kWh
+18 to 20 David Street,Electricity,Service Fee,0.396,/account/day
+23 Breene Place,Electricity,Service Fee,1.5332,/account/day
+23 Breene Place,Electricity,Electricity,0.3344,/kWh
+26 Sankey Street,Water,Hot Water Heating,0.01472,/L
+26 Sankey Street,Water,Service Fee,0.616,/account/day
+27 Park Avenue,Water,Cold Water,4.98,/kL
+27 Park Avenue,Water,Service Fee,0.36,/account/day
+511 Olsen Avenue,Water,Cold Water,4.98,/kL
+511 Olsen Avenue,Water,Service Fee,0.396,/account/day
+52 Cunningham,Water,Hot Water Heating,0.02253,/L
+52 Cunningham,Water,Service Fee,0.715,/account/day
+9SW CTS 49258,Water,Hot Water Heating,0.04,/L
+9SW CTS 49258,Water,Service Fee,0.396,/account/day
+Alto Gladstone,Electricity,Electricity,0.29975,/kWh
+Alto Gladstone,Electricity,Service Fee,0.483,/account/day
+Alton Place,Hot Water,Hot Water Heating,0.033,/L
+Alton Place,Hot Water,Service Fee,1.081,/account/day
+Arvia CTS 51778,Electricity,Electricity,0.26,/kWh
+Arvia CTS 51778,Electricity,Service Fee,0.5337,/account/day
+Arvia CTS 51778,Water,Hot Water Heating,0.02,/L
+Arvia CTS 51778,Electricity,Unmetered Appliance,0.15,/account/day
+Baigle Pty Ltd ATF The Baigle Trust,Water,Cold Water,0.005555,/L
+Beach House On Suttons CTS 34317,Electricity,Electricity,0.205,/kWh
+Beach House On Suttons CTS 34317,Electricity,Service Fee,0.529,/account/day
+Beach House On Suttons CTS 34317,Water,Hot Water Heating,0.03,/L
+Bell Place Centre,Water,Cold Water,4.98,/kL
+Blanck Court,Water,Cold Water,4.98,/kL
+Blanck Court,Water,Service Fee,0.414,/account/day
+Lakes Vista Office Park Bldg 2 CTS 43166,Electricity,Electricity,0.36465,/kWh
+Lakes Vista Office Park Bldg 2 CTS 43166,Electricity,Service Fee,0.825,/account/day
+Blue Gum Place CTS 8906,Water,Cold Water,4.98,/kL
+Caraford Gardens,Water,Cold Water,4.98,/kL
+Cascades By The Bay,Water,Hot Water Heating,0.03266,/L
+Cascades By The Bay,Water,Hot Water Supply Charge,7.6,/account/biLLing_period
+Cascades By The Bay,Water,Service Fee,0.396,/account/day
+City Connection,Water,Cold Water,4.98,/kL
+City Connection,Water,Service Fee,0.36,/account/day
+Compton Business Park,Electricity,Electricity,0.21,/kWh
+Compton Business Park,Electricity,Service Fee,0.414,/account/day
+Computer Court CTS 34886,Water,Cold Water,4.98,/kL
+Computer Court CTS 34886,Water,Service Fee,0.4255,/account/day
+Coomera Outlook,Water,Cold Water,4.98,/kL
+Courtlin Pty Ltd,Electricity,,,
+Courtlin Pty Ltd,Gas,,,
+Courtlin Pty Ltd,Water,,,
+Courtlin Pty Ltd,Water,Cold Water,4.498,/kL
+Courtlin Pty Ltd,Water,Cold Water,5.555,/kL
+DEPASQUALE FAMILY TRUST,Electricity,Electricity,0.3256,/kWh
+DEPASQUALE FAMILY TRUST,Electricity,Service Fee,1.0925,/account/day
+Etro Metroplex On Gateway,Water,Sewage,43.24,/account/biLLing_period
+Etro Metroplex On Gateway,Water,Service Fee,0.36,/account/day
+Etro Metroplex On Gateway,Water,Cold Water Tier One,4.498,/kL
+Etro Metroplex On Gateway,Water,Cold Water Tier Two,5.555,/kL
+Etro Metroplex On Gateway,Water,Sewage,86.48,/account/biLLing_period
+Etro Metroplex On Gateway,Water,Service Fee,0.36,/account/day
+Etro Metroplex On Gateway,Water,Cold Water,4.498,/kL
+Etro Metroplex On Gateway,Water,Cold Water,5.555,/kL
+Etro Metroplex On Gateway,Water,Sewage,129.71,/account/biLLing_period
+Etro Metroplex On Gateway,Water,Service Fee,0.36,/account/day
+Etro Metroplex On Gateway,Water,Cold Water,4.498,/kL
+Etro Metroplex On Gateway,Water,Cold Water,5.555,/kL
+Etro Metroplex On Gateway,Water,Sewage,172.94,/account/biLLing_period
+Etro Metroplex On Gateway,Water,Service Fee,0.36,/account/day
+Etro Metroplex On Gateway,Water,Cold Water,4.498,/kL
+Etro Metroplex On Gateway,Water,Cold Water,5.555,/kL
+Etro Metroplex On Gateway,Water,Sewage,216.18,/account/biLLing_period
+Etro Metroplex On Gateway,Water,Service Fee,0.36,/account/day
+Etro Metroplex On Gateway,Water,Cold Water,4.498,/kL
+Etro Metroplex On Gateway,Water,Cold Water,5.555,/kL
+Evan Thomson Building,Electricity,Electricity,0.22,/kWh
+Evan Thomson Building,Electricity,Service Fee,0.575,/account/day
+Evergreen on Careel,Water,Cold Water,4.98,/kL
+Evergreen on Careel,Water,Service Fee,0.644,/account/day
+Falkinder Apartments CTS 7871,Water,Cold Water,4.98,/kL
+Flinders Centre CTS 7909,Electricity,Electricity,0.3344,/kWh
+Flinders Centre CTS 7909,Electricity,Service Fee,0.57,/account/day
+Forty Tuscany CTS 25724,Water,Hot Water Heating,0.03496,/L
+Forty Tuscany CTS 25724,Water,Service Fee,0.407,/account/day
+Glades Glasswing,Water,Cold Water Tier One,4.498,/kL
+Glades Glasswing,Water,Cold Water Tier Two,5.555,/kL
+Glades Glasswing,Water,Hot Water,0.02343,/L
+Habitat On Doolan,Electricity,Electricity,0.3204,/kWh
+Habitat On Doolan,Electricity,Service Fee,0.36,/account/day
+Harbour Lights Retail,Water,Cold Water,0.0017,/L
+Harbour Lights Retail,Water,Service Fee,0.3287,/service point/day
+Heritage Green,Water,Cold Water Tier One,4.498,/kL
+Heritage Green,Water,Cold Water Tier Two,5.555,/kL
+Hub 23,Electricity,Electricity,0.25,/kWh
+Hub 23,Electricity,Service Fee,0.8625,/account/day
+Iceworks,Water,Hot Water Heating,0.02204,/L
+Iceworks,Water,Cold Water Tier One,4.498,/kL
+Iceworks,Water,Cold Water Tier Two,5.555,/kL
+Ivory Burleigh Beach,Gas,Gas Supply Charge,1.2645,/account/day
+Ivory Burleigh Beach,Gas,Gas,0.0437,/mj
+Ivory Burleigh Beach,Gas,Gas,0.0407,/mj
+LAKES VISTA OFFICE PARK CTS 40533,Electricity,Electricity,0.3315,/kWh
+LAKES VISTA OFFICE PARK CTS 40533,Electricity,Service Fee,0.57,/account/day
+Lavender Park CTS 44106,Electricity,Electricity,0.3396,/kWh
+Lavender Park CTS 44106,Electricity,Service Fee,0.631255,/account/day
+Les Colonnades,Electricity,Electricity,0.22,/kWh
+Les Colonnades,Electricity,Service Fee,0.36,/account/day
+Lidospace,Electricity,Electricity,0.3344,/kWh
+Lidospace,Electricity,Service Fee,1.5332,/account/day
+Linear Place,Water,Service Fee,0.319,/account/day
+Linear Place,Water,Cold Water,4.98,/kL
+M25 Sherwood Apartments CTS 51238,Electricity,Electricity,0.33957,/kWh
+M25 Sherwood Apartments CTS 51238,Electricity,Service Fee,0.396,/account/day
+Mantra on Salt SP 73905,Electricity,Electricity,0.2,/kWh
+Mantra on Salt SP 73905,Electricity,Service Fee,2.1126,/account/day
+Mariners Caloundra,Electricity,Service Fee,0.39,/account/day
+Mariners Caloundra,Electricity,Electricity,0.182,/kWh
+Mariners Peninsula,Water,Hot Water Supply Charge,0.1546,/account/day
+Mariners Peninsula,Water,Hot Water Heating,0.0239,/L
+Mariners Peninsula,Water,Unmetered Appliance,0.485875,/account/day
+Northern Bay,Water,Cold Water,4.824,/kL
+Northern Bay,Water,Service Fee,0.51,/account/day
+Northern Bay,Water,Recycled water,3.092,/kL
+Northgate Court CTS 16648,Water,Cold Water Tier One,4.498,/kL
+Northgate Court CTS 16648,Water,Cold Water Tier Two,5.555,/kL
+One Macquarie,Electricity,Electricity,0.2,/kWh
+One Macquarie,Electricity,Service Fee,0.621,/account/day
+One Macquarie,Water,Hot Water Heating,0.01981,/L
+One Macquarie,Water,Unmetered Appliance,0.3,/account/day
+On The Bay Apartments CTS 36317,Electricity,Electricity,0.3204,/kWh
+On The Bay Apartments CTS 36317,Electricity,Service Fee,0.6555,/account/day
+On The Bay Apartments CTS 36317,Water,Hot Water,0.02343,/L
+On The Bay Apartments CTS 36317,Water,Cold Water Tier One,0.004304,/L
+On The Bay Apartments CTS 36317,Water,Cold Water Tier Two,0.005087,/L
+On The Beach Resort Bribie Island CTS 35674,Electricity,Electricity,0.3204,/kWh
+On The Beach Resort Bribie Island CTS 35674,Electricity,Service Fee,0.57,/account/day
+On The Beach Resort Bribie Island CTS 35674,Water,Hot Water,0.0175,/L
+On The Beach Resort Bribie Island CTS 35674,Water,Cold Water Tier One,0.004304,/L
+On The Beach Resort Bribie Island CTS 35674,Water,Cold Water Tier Two,0.005087,/L
+Oxley Circle CTS 3858,Electricity,Electricity,0.17,/kWh
+Oxley Circle CTS 3858,Electricity,Service Fee,0.58,/account/day
+Oxley Circle CTS 3858,Water,Cold Water,4.98,/kL
+Pandanus Pocket SP 79530,Electricity,Electricity,0.401,/kWh
+Pandanus Pocket SP 79530,Electricity,Service Fee,0.46,/account/day
+Pandanus Pocket SP 79530,Water,Cold Water Tier One,4.08,/kL
+Pandanus Pocket SP 79530,Water,Cold Water Tier Two,6.47,/kL
+Pavilion Arcade Airlie Beach,Electricity,Electricity,0.32365,/kWh
+Pavilion Arcade Airlie Beach,Electricity,Service Fee,1.82788,/account/day
+Pavilion Arcade Airlie Beach Demand Tariff,Electricity,Market Charges,29.473,/kW/month
+Pavilion Arcade Airlie Beach Demand Tariff,Electricity,Service Fee,47.3057,/account/day
+Petrel Sands CTS 30982,Water,Cold Water,4.98,/kL
+Petrel Sands CTS 30982,Water,Service Fee,0.616,/account/day
+Plains Junction 1 CTS 23700,Electricity,Electricity,0.165,/kWh
+Plains Junction 1 CTS 23700,Electricity,Service Fee,1.0925,/account/day
+Portal Lot 2,Electricity,Electricity,0.3315,/kWh
+Portal Lot 2,Electricity,Service Fee,1.081,/account/day
+Portofino 1,Water,Cold Water,4.98,/kL
+Portofino 1,Water,Service Fee,0.396,/account/day
+Q On Quarrion,Electricity,Electricity,0.3204,/kWh
+Q On Quarrion,Electricity,Service Fee,0.49,/account/day
+Ranaf Pty Ltd,Electricity,Electricity,0.3344,/kWh
+Ranaf Pty Ltd,Electricity,Service Fee,1.5332,/account/day
+Red Hill Centre CTS 8030,Electricity,Electricity,0.24,/kWh
+Red Hill Centre CTS 8030,Electricity,Service Fee,0.5865,/account/day
+Regencey Terraces CTS 26704,Water,Cold Water Tier One,4.498,/kL
+Regencey Terraces CTS 26704,Water,Cold Water Tier Two,5.555,/kL
+Regencey Terraces CTS 26704,Water,Service Fee,0.297,/account/day
+Riverlily,Water,Cold Water Tier One,4.498,/kL
+Riverlily,Water,Cold Water Tier Two,5.555,/kL
+Riverview Terraces CTS 23176,Water,Cold Water,4.98,/kL
+Riverview Terraces CTS 23176,Water,Service Fee,0.36,/account/day
+Sams Edge CTS 46159,Electricity,Electricity,0.297,/kWh
+Sams Edge CTS 46159,Electricity,Service Fee,0.396,/account/day
+Seashells On Urangan,Electricity,Electricity,,/kWh
+Seashells On Urangan,Electricity,Service Fee,,/day
+Seven Oaks CTS 47005,Water,Cold Water Tier One,4.498,/kL
+Seven Oaks CTS 47005,Water,Cold Water Tier Two,5.555,/kL
+Seven Oaks CTS 47005,Water,Hot Water Heating,0.031947,/L
+Seven Oaks CTS 47005,Water,Unmetered Appliance,0.481016,/account/day
+Seven Oaks CTS 47005,Water,Service Fee,0.616,/account/day
+Shea Residences,Water,Hot Water Heating,0.0125,/L
+Shea Residences,Water,Gas Supply Charge,0.3,/account/day
+Shea Residences,Electricity,Electricity,0.3204,/kWh
+Shea Residences,Electricity,Service Fee,1.2988,/service point/day
+Signature Point CTS 41630,Water,Hot Water,0.03778,/L
+Signature Point CTS 41630,Water,Service Fee,0.5175,/account/day
+Silverferns,Water,Cold Water,4.98,/kL
+Silverferns,Water,Service Fee,0.7475,/account/day
+Summer Chambers,Water,Cold Water,4.98,/kL
+Summer Chambers,Water,Service Fee,0.27,/account/day
+Surfers Views South CTS 24128,Water,Cold Water,4.98,/kL
+The Groves Loganholme,Electricity,Air Conditioning,0.91,/hours
+The Groves Loganholme,Electricity,Service Fee,0.414,/account/day
+The Moroccan,Electricity,Electricity,0.226,/kWh
+The Moroccan,Electricity,Service Fee,0.95,/account/day
+The Summit Airlie Beach,Water,Cold Water,2.38,/kL
+The Summit Airlie Beach,Water,Service Fee,0.65,/account/day
+The Summit House Lots,Water,Cold Water,2.38,/kL
+The Summit House Lots,Water,Service Fee,0.414,/account/day
+The Dalgety,Water,Hot Water,0.02343,/L
+The Dalgety,Water,Service Fee,0.36,/account/day
+The Presidents Lodge,Electricity,Electricity,0.235,/kWh
+The Presidents Lodge,Electricity,Service Fee,0.414,/account/day
+The Village At West End,Water,Service Fee,0.36,/account/day
+The Village At West End,Water,Hot Water Heating,0.02882,/L
+Frenchville Shopping Centre,Electricity,Electricity,0.265,/kWh
+Frenchville Shopping Centre,Electricity,Service Fee,0.76858,/account/day
+Frenchville Shopping Centre,Electricity,Electricity,0.265,/kWh
+Frenchville Shopping Centre,Electricity,Service Fee,1.82788,/account/day
+Toohey Mountain Estate,Electricity,Electricity,0.35244,/kWh
+Toohey Mountain Estate,Electricity,Service Fee,0.396,/account/day
+Toohey Mountain Estate,Electricity,Electricity Rebate/Concession,-1.05853,/day
+Toohey Mountain Estate,Electricity,Electricity,0.35244,/kWh
+Toohey Mountain Estate,Electricity,Service Fee,0.396,/account/day
+Toohey Mountain Estate,Electricity,Electricity Rebate/Concession,-1.05853,/day
+Toohey Mountain Estate,Electricity,Solar Credit,-0.05,/kWh
+Watermark Residences,Electricity,Electricity,0.155,/kWh
+Watermark Residences,Electricity,Electricity Rebate/Concession,-0.9623,/day
+Watermark Residences,Electricity,Service Fee,0.36,/account/day

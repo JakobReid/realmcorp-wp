@@ -17,7 +17,7 @@
             </div>
             <?php endif; ?>
         </div>
-        <?php if ($billing_system === 'BlueBilling'): ?>
+        <?php if ($billing_system === 'bluebilling'): ?>
         <div style="margin-top: 2rem;">
             <a href="/customer-portal" class="wp-block-button__link" style="
                 background-color: #015691 !important;

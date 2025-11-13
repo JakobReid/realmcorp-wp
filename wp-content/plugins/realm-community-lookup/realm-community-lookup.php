@@ -51,16 +51,6 @@ function realm_cl_display_search_form() {
     return ob_get_clean();
 }
 add_shortcode('realm_community_lookup', 'realm_cl_display_search_form');
-add_shortcode('realm_test', function() { return '<p>Realm plugin is working!</p>'; });
-
-// Debug: Check if shortcode is registered
-add_action('init', function() {
-    if (shortcode_exists('realm_community_lookup')) {
-        error_log('Realm Community Lookup shortcode is registered');
-    } else {
-        error_log('Realm Community Lookup shortcode is NOT registered');
-    }
-});
 
 // 3. AJAX Handler
 function realm_cl_handle_search() {
@@ -97,26 +87,46 @@ function realm_cl_handle_search() {
 
     // Now read communities data and match by postcode
     if ( file_exists($communities_csv) && ($handle = fopen($communities_csv, 'r')) !== false ) {
-        // Skip header row
-        $header = fgetcsv($handle);
+        // Read header and create column name to index mapping
+        $header = array_flip(fgetcsv($handle));
 
         // Loop through each row of the CSV
         while (($row = fgetcsv($handle)) !== false) {
-            // row[3] is the Postcode column in communities.csv
-            if (strcasecmp(trim($row[3]), trim($query)) === 0) {
-                $building_name = $row[0];
+            // Match by postcode column
+            if (strcasecmp(trim($row[$header['postcode']]), trim($query)) === 0) {
+                $building_name = $row[$header['building_name']];
+                $electricity_authority = isset($header['electricity_authority']) ? trim($row[$header['electricity_authority']]) : '';
+                $water_authority = isset($header['water_authority']) ? trim($row[$header['water_authority']]) : '';
+
+                // Determine services from authority columns
+                $services = array();
+                if (!empty($electricity_authority)) {
+                    $services[] = 'Electricity';
+                }
+                if (!empty($water_authority)) {
+                    $services[] = 'Water';
+                }
 
                 // Get charges for this building
                 $charges = isset($charges_by_building[$building_name]) ? $charges_by_building[$building_name] : array();
 
+                // Determine display name based on service count
+                $display_name = $building_name;
+                if (count($services) === 1) {
+                    $display_name = $building_name . ' - ' . $services[0];
+                }
+
                 $results[] = array(
-                    'building_name'     => $row[0],
-                    'billing_system'    => $row[1],
-                    'building_code'     => $row[2],
-                    'postcode'          => $row[3],
-                    'water_authority'   => $row[4],
-                    'classification'    => $row[5],
-                    'charges'           => $charges
+                    'building_name'         => $building_name,
+                    'billing_system'        => $row[$header['billing_system']],
+                    'building_code'         => $row[$header['building_code']],
+                    'postcode'              => $row[$header['postcode']],
+                    'classification'        => $row[$header['classification']],
+                    'electricity_authority' => $electricity_authority,
+                    'water_authority'       => $water_authority,
+                    'services'              => $services,
+                    'display_name'          => $display_name,
+                    'charges'               => $charges
                 );
             }
         }
@@ -154,20 +164,24 @@ function realm_building_hub_hero_display() {
     $postcode = '';
     $billing_system = '';
     $classification = '';
+    $electricity_authority = '';
+    $water_authority = '';
 
     if ($building_code) {
         $communities_csv = plugin_dir_path(__FILE__) . 'communities.csv';
         if (file_exists($communities_csv) && ($handle = fopen($communities_csv, 'r')) !== false) {
             // Read header row and create mapping
-            $header = fgetcsv($handle);
-            $header_map = array_flip($header);
+            $header = array_flip(fgetcsv($handle));
 
+            // Building per row
             while (($row = fgetcsv($handle)) !== false) {
-                if ($row[$header_map['building_code']] === $building_code) {
-                    $building_name = $row[$header_map['building_name']];
-                    $billing_system = $row[$header_map['billing_system']];
-                    $postcode = $row[$header_map['postcode']];
-                    $classification = $row[$header_map['classification']];
+                if ($row[$header['building_code']] === $building_code) {
+                    $building_name = $row[$header['building_name']];
+                    $billing_system = strtolower(str_replace(' ', '', trim($row[$header['billing_system']])));
+                    $postcode = $row[$header['postcode']];
+                    $classification = $row[$header['classification']];
+                    $electricity_authority = isset($header['electricity_authority']) ? $row[$header['electricity_authority']] : '';
+                    $water_authority = isset($header['water_authority']) ? $row[$header['water_authority']] : '';
                     break;
                 }
             }
@@ -179,7 +193,7 @@ function realm_building_hub_hero_display() {
     $base_url = '/staging/5684';
     $urls = array();
 
-    if ($billing_system === 'StrataMax') {
+    if ($billing_system === 'stratamax') {
         $urls = array(
             'move_in' => '', // Custom form needed
             'pay_bill' => $base_url . '/making-a-payment',
@@ -187,7 +201,7 @@ function realm_building_hub_hero_display() {
             'direct_debit' => 'https://www.stratapay.com.au/directdebit/',
             'contact' => $base_url . '/contact'
         );
-    } elseif ($billing_system === 'BlueBilling') {
+    } elseif ($billing_system === 'bluebilling') {
         $urls = array(
             'move_in' => $base_url . '/move-in',
             'pay_bill' => $base_url . '/customer-portal',
@@ -207,6 +221,7 @@ function realm_building_hub_hero_display() {
         );
     }
 
+    // load variables into the template
     ob_start();
     include plugin_dir_path(__FILE__) . 'templates/building-hub-hero.php';
     return ob_get_clean();
@@ -227,10 +242,10 @@ function realm_building_hub_services_display() {
     $communities_csv = plugin_dir_path(__FILE__) . 'communities.csv';
 
     if (file_exists($communities_csv) && ($handle = fopen($communities_csv, 'r')) !== false) {
-        fgetcsv($handle); // Skip header
+        $header = array_flip(fgetcsv($handle));
         while (($row = fgetcsv($handle)) !== false) {
-            if ($row[2] === $building_code) { // building_code is column 2
-                $billing_system = $row[1]; // billing_system is column 1
+            if ($row[$header['building_code']] === $building_code) {
+                $billing_system = strtolower(str_replace(' ', '', trim($row[$header['billing_system']])));
                 break;
             }
         }
@@ -241,7 +256,7 @@ function realm_building_hub_services_display() {
     $base_url = '/staging/5684';
     $urls = array();
 
-    if ($billing_system === 'StrataMax') {
+    if ($billing_system === 'stratamax') {
         $urls = array(
             'move_in' => '', // Custom form needed
             'pay_bill' => $base_url . '/making-a-payment',
@@ -249,7 +264,7 @@ function realm_building_hub_services_display() {
             'direct_debit' => 'https://www.stratapay.com.au/directdebit/',
             'contact' => $base_url . '/contact'
         );
-    } elseif ($billing_system === 'BlueBilling') {
+    } elseif ($billing_system === 'bluebilling') {
         $urls = array(
             'move_in' => $base_url . '/move-in',
             'pay_bill' => $base_url . '/customer-portal',
@@ -293,28 +308,27 @@ function realm_building_hub_rates_display() {
 
     // Get building name from communities CSV
     if (file_exists($communities_csv) && ($handle = fopen($communities_csv, 'r')) !== false) {
-        fgetcsv($handle); // Skip header
+        $header = array_flip(fgetcsv($handle));
         while (($row = fgetcsv($handle)) !== false) {
-            if ($row[2] === $building_code) { // building_code is column 2
-                $building_name = $row[0]; // building_name is column 0
+            if ($row[$header['building_code']] === $building_code) {
+                $building_name = $row[$header['building_name']];
                 break;
             }
         }
         fclose($handle);
     }
 
-    // Get charges from charges CSV using column headers
+    // Get charges from charges CSV
     if (file_exists($charges_csv) && ($handle = fopen($charges_csv, 'r')) !== false) {
-        $charges_header = fgetcsv($handle); // Read headers
-        $header_map = array_flip($charges_header); // Create header to index mapping
+        $header = array_flip(fgetcsv($handle));
 
         while (($row = fgetcsv($handle)) !== false) {
-            if ($row[$header_map['building_name']] === $building_name) {
+            if ($row[$header['building_name']] === $building_name) {
                 $charges[] = array(
-                    'utility' => isset($header_map['utility']) ? $row[$header_map['utility']] : '',
-                    'charge_name' => isset($header_map['charge_name']) ? $row[$header_map['charge_name']] : '',
-                    'charge_rate' => isset($header_map['charge_rate']) ? $row[$header_map['charge_rate']] : '',
-                    'charge_rate_unit' => isset($header_map['charge_rate_unit']) ? $row[$header_map['charge_rate_unit']] : ''
+                    'utility' => isset($header['utility']) ? $row[$header['utility']] : '',
+                    'charge_name' => isset($header['charge_name']) ? $row[$header['charge_name']] : '',
+                    'charge_rate' => isset($header['charge_rate']) ? $row[$header['charge_rate']] : '',
+                    'charge_rate_unit' => isset($header['charge_rate_unit']) ? $row[$header['charge_rate_unit']] : ''
                 );
             }
         }

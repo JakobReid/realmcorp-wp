@@ -1,20 +1,93 @@
-building_name,billing_system,building_code,postcode,water_authority,classification
-19  Computer Court - Sandbah Enterprise 2,StrataMax,COMP 8,,Gold Coast Council,
-4 Computer Court - Sandbah Enterprise,StrataMax,COMP 7,4207,Gold Coast Council,Commercial
-Alladex,StrataMax,COMP 5,4151,Queensland Urban Utilities,Hot Water
-Avenal CTS 17325,StrataMax,17325,4567,Unity Water,Residential
-B By Halcyon,StrataMax,COMP 4,4556,Unity Water,Residential 
-Beachfront Mirage ,StrataMax,107089,4877,Douglas Shire Council,Residential
-Chamonix,StrataMax,27014,4218,Gold Coast Council,Residential
-Escape Villas Port Douglas,StrataMax,54681,4877,Douglas Shire Council,Residential
-Halcyon Greens,StrataMax,COMP 2,4209,Gold Coast Council,Residential
-Halcyon Promenade,StrataMax,COMP 1,4505,Queensland Urban Utilities,Residential
-Halcyon Rise,StrataMax,COMP 3,4133,Logan City Council,Residential
-Paradise Place Resort,StrataMax,32336,4564,Unity Water,Residential
-Sicura,StrataMax,55077,4118,Logan City Council,Residential
-Strata Plan 104431,StrataMax,104431,2486,Tweed Shire Council,Residential
-Summerfield,StrataMax,25212,4067,Queensland Urban Utilities,Residential
-The Beachfront Port Douglas,StrataMax,31795,4877,Douglas Shire Council,Residential
-The Lakes Port Douglas,StrataMax,32886,4877,Douglas Shire Council,Residential
-Vorkas Pty Ltd,BlueBilling,COMP 6,4151,Queensland Urban Utilities,Commercial
-Willamarie,BlueBilling,25567,4558,Unity Water,Residential
+building_name,billing_system,building_code,postcode,classification,electricity_authority,water_authority
+17A Ern Harley Drive,Blue Billing,30617,4220,Residential,,Gold Coast City Council
+18 Blanck Street CTS 37361,Blue Billing,30135,4208,Residential,,Gold Coast City Council
+18 to 20 David Street,Blue Billing,30379,4012,Residential,Energex,Urban Utilities
+23 Breene Place,Blue Billing,30420,4170,SME,Energex,
+25 Cambridge Parade On Behalf of Michael Powers,Blue Billing,30142,4179,SME,Energex,
+26 Sankey Street,Blue Billing,30322,4152,Residential,,Urban Utilities
+27 Park Avenue,Blue Billing,30324,4220,SME,,Gold Coast City Council
+511 Olsen Avenue,Blue Billing,30245,4215,Residential,,Gold Coast City Council
+52 Cunningham,Blue Billing,30336,4068,Residential,,Urban Utilities
+67 St Pauls Terrace,Blue Billing,30236,4000,SME,Energex,
+9SW CTS 49258,Blue Billing,30104,4075,Residential,,Urban Utilities
+Alto Gladstone,Blue Billing,30438,4680,Residential,Ergon Energy,
+Alton Place,Blue Billing,30754,4007,Residential,,
+Arvia CTS 51778,Blue Billing,30161,4225,Residential,Energex,Gold Coast City Council
+Baigle Pty Ltd ATF The Baigle Trust,Blue Billing,30021,4179,SME,,Urban Utilities
+Beach House On Suttons CTS 34317,Blue Billing,30242,4020,Residential,Energex,Urban Utilities
+Bell Place Centre,Blue Billing,30536,4213,SME,,Gold Coast City Council
+Blanck Court,Blue Billing,30589,4208,SME,,Gold Coast City Council
+Blue Gum Place CTS 8906,Blue Billing,30337,4227,Residential,,Gold Coast City Council
+Caraford Gardens,Blue Billing,30742,4209,Residential,,Gold Coast City Council
+Cascades By The Bay,Blue Billing,30401,4163,Residential,,Urban Utilities
+City Connection,Blue Billing,30351,4215,Residential,,Gold Coast City Council
+Compton Business Park,Blue Billing,30473,4119,SME,Energex,
+Computer Court CTS 34886,Blue Billing,30247,4207,SME,,Gold Coast City Council
+Coomera Outlook,Blue Billing,30295,4209,Residential,,Gold Coast City Council
+Courtlin Pty Ltd,Blue Billing,30451,4006,SME,Energex,
+DEPASQUALE FAMILY TRUST,Blue Billing,30029,4064,SME,Energex,
+Esperian,Blue Billing,30387,4007,Residential,,Urban Utilities
+Etro Metroplex On Gateway,Blue Billing,30251,4172,SME,,Urban Utilities
+Evan Thomson Building,Blue Billing,30464,4066,SME,Energex,
+Evergreen on Careel,Blue Billing,30235,4212,Residential,,Gold Coast City Council
+Falkinder Apartments CTS 7871,Blue Billing,30188,4216,Residential,,Gold Coast City Council
+Flinders Centre CTS 7909,Blue Billing,30147,4178,SME,Energex,
+Forty Tuscany CTS 25724,Blue Billing,30549,4060,Residential,,Urban Utilities
+Frenchville Shopping Centre,Blue Billing,30018,4701,SME,Energex,
+Glades Glasswing,Blue Billing,30252,4226,Residential,,Gold Coast City Council
+Habitat On Doolan,Blue Billing,30405,4560,Residential,Energex,
+Harbour Lights Retail,Blue Billing,30458,4870,SME,,Ergon Energy
+Heritage Green,Blue Billing,30352,4214,Residential,,Gold Coast City Council
+Hub 23,Blue Billing,30748,4300,SME,Energex,
+Iceworks,Blue Billing,30597,4064,Residential,Energex,Urban Utilities
+Ivory Burleigh Beach,Blue Billing,30417,4220,Residential,,
+LAKES VISTA OFFICE PARK CTS 40533,Blue Billing,30072,4509,SME,Energex,
+Lakes Vista Office Park Bldg 2 CTS 43166,Blue Billing,30089,4509,SME,Energex,
+Lavender Park CTS 44106,Blue Billing,30406,4018,Residential,Energex,
+Les Colonnades,Blue Billing,30519,4216,Residential,Energex,
+Lidospace,Blue Billing,30005,4102,SME,Energex,
+Linear Place,Blue Billing,30623,4220,SME,,Gold Coast Water
+Luminar Villas CTS 30459,Blue Billing,30043,4170,Residential,,Urban Utilities
+M25 Sherwood Apartments CTS 51238,Blue Billing,30141,4075,Residential,Energex,
+Mantra on Salt SP 73905,Blue Billing,20081,2487,SME,Essential Energy,
+Mantra on Salt SP 74283,Blue Billing,20069,2487,SME,,Tweed Shire Council
+Mariners Caloundra,Blue Billing,30520,4551,Residential,Energex,
+Mariners Peninsula,Blue Billing,30127,4810,Residential,,Townsville City Council
+Melton Views,Blue Billing,30787,4810,Residential,Energex,
+Metro Plaza,Blue Billing,30206,4215,SME,,Gold Coast City Council
+Northern Bay,Blue Billing,30253,4209,Residential,,Gold Coast City Council
+Northgate Court CTS 16648,Blue Billing,30101,4013,SME,,Urban Utilities
+On The Bay Apartments CTS 36317,Blue Billing,30159,4507,Residential,Energex,Urban Utilities
+On The Beach Resort Bribie Island CTS 35674,Blue Billing,30109,4507,Residential,Energex,Unitywater
+One Macquarie,Blue Billing,30567,4005,Residential,Energex,Urban Utilities
+Oxley Circle CTS 3858,Blue Billing,30160,4216,SME,Energex,Gold Coast City Council
+Pandanus Pocket SP 79530,Blue Billing,20120,2487,Residential,Essential Energy,Tweed Shire Council
+Pavilion Arcade Airlie Beach,Blue Billing,30479,4802,SME,Energex,
+Petrel Sands CTS 30982,Blue Billing,30278,4218,Residential,,Gold Coast City Council
+Plains Junction 1 CTS 23700,Blue Billing,30193,4118,SME,Energex,
+Portal Lot 2,Blue Billing,30493,4119,SME,Energex,
+Portofino 1,Blue Billing,30219,4212,Residential,,Gold Coast City Council
+Precinct at Bulimba 1 CTS 43795,Blue Billing,30125,4171,Residential,,Urban Utilities
+Q On Quarrion,Blue Billing,30495,4018,Residential,Energex,
+Ranaf Pty Ltd,Blue Billing,30035,4118,SME,Energex,
+Red Hill Centre CTS 8030,Blue Billing,30270,4059,SME,Energex,
+Regencey Terraces CTS 26704,Blue Billing,30130,4102,Residential,,Urban Utilities
+Riverlily,Blue Billing,30254,4211,Residential,,Gold Coast City Council
+Riverview Terraces CTS 23176,Blue Billing,30117,4209,Residential,,Gold Coast City Council
+Sams Edge CTS 46159,Blue Billing,30743,4012,Residential,Energex,
+Seashells On Urangan,Blue Billing,30505,4655,Residential,Ergon,
+Seven Oaks CTS 47005,Blue Billing,30119,4068,Residential,,Urban Utilities
+Shea Residences,Blue Billing,30231,4067,Residential,Energex,Urban Utilities
+Signature Point CTS 41630,Blue Billing,30120,4067,Residential,,Urban Utilities
+Silverferns,Blue Billing,30326,4227,Residential,,Gold Coast City Council
+Summer Chambers,Blue Billing,30256,4216,Residential,,Gold Coast City Council
+Surfers Views South CTS 24128,Blue Billing,30676,4213,Residential,,Gold Coast City Council
+The Dalgety,Blue Billing,30374,4810,Residential,,Townsville City Council
+The Groves Loganholme,Blue Billing,30419,4129,SME,Energex,
+The Moroccan,Blue Billing,30455,4217,SME,Energex,
+The Presidents Lodge,Blue Billing,30425,4214,Residential,Energex,
+The Summit Airlie Beach,Blue Billing,30499,4802,Residential,,Unknown Water Authority
+The Summit House Lots,Blue Billing,30511,4802,Residential,,Unknown Water Authority
+The Village At West End,Blue Billing,30426,4101,Residential,,Urban Utilities
+Toohey Mountain Estate,Blue Billing,30512,4121,Residential,Energex,
+Watermark Residences,Blue Billing,30626,4169,Residential,Energex,
