@@ -217,18 +217,6 @@
     pointer-events: none;
 }
 
-.realm-search-button.loading::after {
-    content: '';
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    border-top-color: white;
-    animation: realm-spin 1s ease-in-out infinite;
-    margin-left: 0.5rem;
-}
-
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .wp-block-group .wp-block-group {
@@ -240,6 +228,11 @@
     .wp-block-column {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
+    }
+
+    /* Reduce spacer height on mobile */
+    .realm-search-card .wp-block-spacer {
+        height: 0px !important;
     }
 
     .realm-search-wrapper {
@@ -254,16 +247,17 @@
     }
 
     .realm-search-input {
-        border-radius: 12px 12px 0 0;
-        padding: 1.25rem 1.5rem;
-        font-size: 1.1rem;
+        border-radius: 12px 12px 0 0 !important;
+        padding: 1rem 1.25rem !important;
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
     }
 
     .realm-search-button {
-        border-radius: 0 0 12px 12px;
-        padding: 1.25rem;
-        font-size: 1.1rem;
-        justify-content: center;
+        border-radius: 0 0 12px 12px !important;
+        padding: 1rem 1.25rem !important;
+        font-size: 1rem !important;
+        justify-content: center !important;
     }
 
     .realm-hub-button {
