@@ -19,7 +19,7 @@ uksort($utilities, function($a, $b) {
 });
 ?>
 <div class="building-rates-section">
-    <h2 style="color:#015691; text-align: center; margin-bottom: 2rem;">Utility Rates for <?php echo esc_html($building_name); ?></h2>
+    <h2 style="color:#015691; text-align: center; margin-bottom: 2rem;">Utility Rates</h2>
 
     <?php foreach ($utilities as $utility_name => $utility_charges): ?>
     <div class="utility-rates-group">
