@@ -19,16 +19,7 @@
         </div>
         <?php if ($billing_system === 'bluebilling'): ?>
         <div style="margin-top: 2rem;">
-            <a href="/customer-portal" class="wp-block-button__link" style="
-                background-color: #015691 !important;
-                color: white !important;
-                padding: 0.75rem 2rem !important;
-                border-radius: 4px;
-                text-decoration: none;
-                display: inline-block;
-                font-weight: bold;
-                transition: all 0.3s;
-            ">
+            <a href="/customer-portal" class="wp-block-button__link bluebilling-portal-button">
                 <i class="fas fa-lock"></i> Access BlueBilling Portal
             </a>
         </div>

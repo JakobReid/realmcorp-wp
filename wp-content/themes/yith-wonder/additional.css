@@ -23,14 +23,14 @@
     font-family: 'Poppins', sans-serif !important;
     text-align: center !important;
     font-size: 2rem !important;
-    font-weight: 600 !important;
+    font-weight: 600;
 }
 
 .building-services-subtitle {
     color: #5f6368 !important;
     text-align: center !important;
     margin-top: 0 !important;
-    margin-bottom: 2rem !important;
+    margin-bottom: 2rem;
 }
 
 
@@ -71,8 +71,8 @@
 
 .building-hub-hero h1 {
     font-family: 'Poppins', sans-serif !important;
-    font-size: 2.5rem !important;
-    font-weight: 700 !important;
+    font-size: 2.5rem;
+    font-weight: 700;
     margin-bottom: 1rem;
     color: white !important;
 }
@@ -159,7 +159,7 @@
 .service-card h3 {
     color: #121217;
     font-family: 'Poppins', sans-serif !important;
-    font-weight: 600 !important;
+    font-weight: 600;
     margin-top: 1rem;
     margin-bottom: 0 !important;
 }
@@ -281,7 +281,7 @@
     color: #015691 !important;
     text-align: center !important;
     font-family: 'Poppins', sans-serif !important;
-    font-weight: 600 !important;
+    font-weight: 600;
     font-size: 2rem !important;
 }
 
@@ -296,7 +296,7 @@
 .utility-rates-group h3 {
     color: #015691 !important;
     font-family: 'Poppins', sans-serif !important;
-    font-weight: 600 !important;
+    font-weight: 600;
     font-size: 1.5rem !important;
     margin: 2rem 0 1rem 0 !important;
 }
@@ -408,10 +408,6 @@
     .building-details {
         flex-direction: column;
         gap: 0.5rem;
-    }
-
-    .building-hub-hero h1 {
-        font-size: 1.75rem;
     }
 
     .service-card {

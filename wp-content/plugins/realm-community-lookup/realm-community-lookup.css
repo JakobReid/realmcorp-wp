@@ -180,6 +180,23 @@
     font-size: 1.5rem;
 }
 
+/* BlueBilling Portal Button */
+.bluebilling-portal-button {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    background-color: #015691 !important;
+    color: white !important;
+    padding: 0.75rem 1rem !important;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.bluebilling-portal-button:hover {
+    background-color: #013d5f !important;
+}
 
 /* Loading Spinner */
 .realm-loading {
