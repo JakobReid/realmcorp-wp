@@ -2,7 +2,7 @@
 /*
 Plugin Name: Realm Community Lookup
 Description: Community search and building hub functionality with multi-utility rate management, service cards, and billing system integration. Modern search bar design with gradient button. Streamlined to show hub navigation only.
-Version: 4.2
+Version: 5.0
 Author: Ryan Reid / Jakob Reid
 License: GPL2
 */
@@ -20,7 +20,7 @@ function realm_cl_enqueue_scripts() {
         'realm-community-lookup-style',
         plugin_dir_url(__FILE__) . 'realm-community-lookup.css',
         array(),
-        '4.2'
+        '5.0'
     );
 
     // Enqueue our JS, depends on jQuery
@@ -28,7 +28,7 @@ function realm_cl_enqueue_scripts() {
         'realm-community-lookup-script',
         plugin_dir_url(__FILE__) . 'realm-community-lookup.js',
         array('jquery'),
-        '2.0',
+        '5.0',
         true
     );
 
