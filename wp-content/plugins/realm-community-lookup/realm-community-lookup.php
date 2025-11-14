@@ -192,7 +192,7 @@ function realm_building_hub_hero_display() {
     }
 
     // Set URLs based on billing system
-    $base_url = '/staging/5684';
+    $base_url = '';
     $urls = array();
 
     if ($billing_system === 'stratamax') {
@@ -255,7 +255,7 @@ function realm_building_hub_services_display() {
     }
 
     // Set URLs based on billing system
-    $base_url = '/staging/5684';
+    $base_url = '';
     $urls = array();
 
     if ($billing_system === 'stratamax') {

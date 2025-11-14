@@ -125,7 +125,7 @@ jQuery(document).ready(function($) {
         // Handle hub button click
         $('#realm_cl_hub_btn').on('click', function() {
             let buildingName = $(this).data('building-name');
-            window.location.href = '/staging/5684/building-hub/?building=' + encodeURIComponent(buildingName);
+            window.location.href = '/building-hub/?building=' + encodeURIComponent(buildingName);
         });
     }
 });
